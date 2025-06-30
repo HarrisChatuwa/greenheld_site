@@ -11,13 +11,13 @@
 <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         <a href="index.html" class="text-2xl font-bold text-primary">Greemheld</a>
-        <nav class="hidden md:flex space-x-6 items-center">
-            <a href="index.html" class="text-neutral-default hover:text-primary transition duration-300">Home</a>
-            <a href="about.html" class="text-neutral-default hover:text-primary transition duration-300">About</a>
-            <a href="services.html" class="text-neutral-default hover:text-primary transition duration-300">Services</a>
-            <a href="projects.html" class="text-neutral-default hover:text-primary transition duration-300">Projects</a>
-            <a href="testimonials.html" class="text-neutral-default hover:text-primary transition duration-300">Testimonials</a>
-            <a href="contact.html" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md transition duration-300">Contact Us</a>
+        <nav class="hidden md:flex space-x-1 items-center">
+            <a href="index.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Home</a>
+            <a href="about.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">About</a>
+            <a href="services.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Services</a>
+            <a href="projects.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Projects</a>
+            <a href="testimonials.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Testimonials</a>
+            <a href="contact.html" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md transition-all duration-300">Contact Us</a>
         </nav>
         <div class="md:hidden">
             <button id="mobile-menu-button" class="text-neutral-dark focus:outline-none">
@@ -43,9 +43,9 @@
         <section id="hero" class="bg-primary text-white text-center py-20 md:py-32 px-4 relative overflow-hidden">
             <div class="absolute inset-0 bg-black opacity-30"></div> <!-- Optional: Dark overlay for better text contrast if using a background image -->
             <div class="relative z-10 container mx-auto">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">Greemheld Social Research & Consulting</h1>
-                <p class="text-lg sm:text-xl md:text-2xl mb-10 max-w-3xl mx-auto">Driving social progress through insightful research and strategic consulting for a better tomorrow.</p>
-                <a href="#services-overview" class="bg-accent hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">Explore Our Services</a>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">Empowering Decisions Through Insightful Social Research.</h1>
+                <p class="text-lg sm:text-xl md:text-2xl mb-10 max-w-3xl mx-auto">Transforming data into actionable strategies for sustainable development and social impact.</p>
+                <a href="#services-overview" class="bg-accent hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">Discover Our Expertise</a>
             </div>
         </section>
 
@@ -53,8 +53,8 @@
         <section id="intro" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-6 md:px-12 text-center">
                 <h2 class="text-3xl md:text-4xl font-semibold text-primary-dark mb-6">Welcome to Greemheld</h2>
-                <p class="text-neutral-default text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-8">
-                    At Greemheld, we specialize in delivering comprehensive social research and strategic consulting services. Our mission is to empower organizations with the insights they need to make informed decisions and drive meaningful social impact.
+                <p class="text-neutral-default text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
+                    Greemheld Social Research and Consulting is a leading firm dedicated to providing comprehensive research, monitoring, and evaluation services. We empower NGOs, government agencies, and private sector organizations with data-driven insights to achieve their social impact goals.
                 </p>
                 <a href="about.html" class="text-accent hover:underline font-semibold text-lg">Learn More About Us</a>
             </div>
@@ -64,24 +64,30 @@
         <section id="services-overview" class="py-16 md:py-24 bg-neutral-light">
             <div class="container mx-auto px-6 md:px-12">
                 <h2 class="text-3xl md:text-4xl font-semibold text-primary-dark mb-12 text-center">Our Core Expertise</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Service 1 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <h3 class="text-2xl font-semibold text-primary mb-4">Research Design</h3>
-                        <p class="text-neutral-default mb-6">Crafting robust research methodologies tailored to your specific questions and objectives.</p>
-                        <a href="services.html#research-design" class="text-accent hover:underline font-medium">Explore Research Design &raquo;</a>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
+                        <h3 class="text-2xl font-semibold text-primary mb-4">Baseline & Endline Surveys</h3>
+                        <p class="text-neutral-default mb-6 flex-grow">Robust data collection and analysis to establish project benchmarks and measure impact.</p>
+                        <a href="services.html#baseline-surveys" class="text-accent hover:underline font-medium self-start">Learn More &raquo;</a>
                     </div>
                     <!-- Service 2 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <h3 class="text-2xl font-semibold text-primary mb-4">Data Analysis</h3>
-                        <p class="text-neutral-default mb-6">Transforming complex data into clear, actionable insights through advanced analytical techniques.</p>
-                        <a href="services.html#data-analysis" class="text-accent hover:underline font-medium">Discover Data Analysis &raquo;</a>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
+                        <h3 class="text-2xl font-semibold text-primary mb-4">Feasibility Studies</h3>
+                        <p class="text-neutral-default mb-6 flex-grow">Assessing the viability of new initiatives and interventions for sustainable success.</p>
+                        <a href="services.html#feasibility-studies" class="text-accent hover:underline font-medium self-start">Learn More &raquo;</a>
                     </div>
                     <!-- Service 3 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <h3 class="text-2xl font-semibold text-primary mb-4">Strategic Consulting</h3>
-                        <p class="text-neutral-default mb-6">Providing evidence-based strategic advice to help you achieve your organizational goals.</p>
-                        <a href="services.html#strategic-consulting" class="text-accent hover:underline font-medium">See Strategic Consulting &raquo;</a>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
+                        <h3 class="text-2xl font-semibold text-primary mb-4">Monitoring & Evaluation</h3>
+                        <p class="text-neutral-default mb-6 flex-grow">Continuous tracking and assessment to ensure project effectiveness and accountability.</p>
+                        <a href="services.html#monitoring-evaluation" class="text-accent hover:underline font-medium self-start">Learn More &raquo;</a>
+                    </div>
+                    <!-- Service 4 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
+                        <h3 class="text-2xl font-semibold text-primary mb-4">Capacity Building</h3>
+                        <p class="text-neutral-default mb-6 flex-grow">Strengthening organizational and individual capabilities in research methodologies.</p>
+                        <a href="services.html#capacity-building" class="text-accent hover:underline font-medium self-start">Learn More &raquo;</a>
                     </div>
                 </div>
             </div>
@@ -90,20 +96,32 @@
         <!-- Featured Projects (Placeholder) -->
         <section id="featured-projects" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-6 md:px-12 text-center">
-                <h2 class="text-3xl md:text-4xl font-semibold text-primary-dark mb-12">Impactful Projects</h2>
-                <p class="text-neutral-default text-lg mb-8 max-w-xl mx-auto">A glimpse into some of our successful collaborations and their outcomes. Full portfolio coming soon.</p>
-                <!-- Placeholder for a few project cards or a carousel -->
-                <div class="grid md:grid-cols-2 gap-8 mb-10">
-                    <div class="bg-neutral-light p-6 rounded-lg shadow-md text-left">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Project Alpha Placeholder</h3>
-                        <p class="text-sm text-neutral-default">Brief description of Project Alpha's impact...</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-primary-dark mb-6">Our Impactful Projects</h2>
+                <p class="text-neutral-default text-lg mb-12 max-w-2xl mx-auto">We're proud to have partnered with diverse organizations to deliver meaningful results. Here’s a snapshot of our work.</p>
+                <div class="grid md:grid-cols-3 gap-8 mb-10">
+                    <!-- Project Card 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-left flex flex-col">
+                        <img src="https://via.placeholder.com/400x250/06b6d4/ffffff?text=Project+Alpha" alt="Project Alpha Image" class="w-full h-48 object-cover rounded-md mb-4">
+                        <h3 class="text-xl font-semibold text-primary mb-2">Community Needs Assessment</h3>
+                        <p class="text-sm text-neutral-default flex-grow mb-4">Evaluated local needs to inform a new community development program for an international NGO.</p>
+                        <a href="projects.html#project-alpha" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md text-sm transition duration-300 self-start">Explore Project</a>
                     </div>
-                    <div class="bg-neutral-light p-6 rounded-lg shadow-md text-left">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Project Beta Placeholder</h3>
-                        <p class="text-sm text-neutral-default">Brief description of Project Beta's outcomes...</p>
+                    <!-- Project Card 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-left flex flex-col">
+                        <img src="https://via.placeholder.com/400x250/06b6d4/ffffff?text=Project+Beta" alt="Project Beta Image" class="w-full h-48 object-cover rounded-md mb-4">
+                        <h3 class="text-xl font-semibold text-primary mb-2">Educational Program M&E</h3>
+                        <p class="text-sm text-neutral-default flex-grow mb-4">Implemented a monitoring and evaluation framework for a youth literacy project.</p>
+                        <a href="projects.html#project-beta" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md text-sm transition duration-300 self-start">Explore Project</a>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-left flex flex-col">
+                        <img src="https://via.placeholder.com/400x250/06b6d4/ffffff?text=Project+Gamma" alt="Project Gamma Image" class="w-full h-48 object-cover rounded-md mb-4">
+                        <h3 class="text-xl font-semibold text-primary mb-2">Market Feasibility Study</h3>
+                        <p class="text-sm text-neutral-default flex-grow mb-4">Assessed market viability for a social enterprise aiming to launch sustainable products.</p>
+                        <a href="projects.html#project-gamma" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md text-sm transition duration-300 self-start">Explore Project</a>
                     </div>
                 </div>
-                <a href="projects.html" class="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-md transition duration-300">View All Projects</a>
+                <a href="projects.html" class="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-md text-sm transition duration-300">View All Projects</a>
             </div>
         </section>
 
@@ -111,17 +129,17 @@
         <section id="testimonials-snippets" class="py-16 md:py-24 bg-neutral-light">
             <div class="container mx-auto px-6 md:px-12">
                 <h2 class="text-3xl md:text-4xl font-semibold text-primary-dark mb-12 text-center">What Our Clients Say</h2>
-                <div class="grid md:grid-cols-2 gap-8">
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     <div class="bg-white p-8 rounded-xl shadow-lg">
-                        <p class="text-neutral-default italic mb-4">"Greemheld's insights were pivotal to our strategic planning. Highly recommend their expertise!"</p>
-                        <p class="font-semibold text-primary">- Client A, Org A (Placeholder)</p>
+                        <p class="text-neutral-default italic mb-4 text-lg">"Greemheld's insights were invaluable for our program's success. Their rigorous approach and clear reporting helped us secure further funding."</p>
+                        <p class="font-semibold text-primary">- A. Client, NGO Director</p>
                     </div>
                     <div class="bg-white p-8 rounded-xl shadow-lg">
-                        <p class="text-neutral-default italic mb-4">"The depth of their research and clarity of their reports are outstanding. A true partner."</p>
-                        <p class="font-semibold text-primary">- Client B, Org B (Placeholder)</p>
+                        <p class="text-neutral-default italic mb-4 text-lg">"The team at Greemheld is professional, responsive, and truly understands the nuances of social research. Highly recommended!"</p>
+                        <p class="font-semibold text-primary">- B. Partner, Development Agency</p>
                     </div>
                 </div>
-                <div class="text-center mt-10">
+                <div class="text-center mt-12">
                     <a href="testimonials.html" class="text-accent hover:underline font-semibold text-lg">Read More Testimonials</a>
                 </div>
             </div>
@@ -130,9 +148,9 @@
         <!-- Secondary CTA Section -->
         <section id="secondary-cta" class="py-16 md:py-24 bg-primary text-white">
             <div class="container mx-auto px-6 md:px-12 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
-                <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto">Let's discuss how Greemheld can assist you in achieving your research and consulting objectives.</p>
-                <a href="contact.html" class="bg-accent hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">Request a Consultation</a>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Drive Change?</h2>
+                <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto">Let's discuss how Greemheld can assist you in achieving your research and consulting objectives. Contact us today for a consultation.</p>
+                <a href="contact.html" class="bg-accent hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">Contact Us Today</a>
             </div>
         </section>
     </main>
