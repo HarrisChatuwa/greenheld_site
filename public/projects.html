@@ -11,13 +11,13 @@
 <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         <a href="index.html" class="text-2xl font-bold text-primary">Greemheld</a>
-        <nav class="hidden md:flex space-x-6 items-center">
-            <a href="index.html" class="text-neutral-default hover:text-primary transition duration-300">Home</a>
-            <a href="about.html" class="text-neutral-default hover:text-primary transition duration-300">About</a>
-            <a href="services.html" class="text-neutral-default hover:text-primary transition duration-300">Services</a>
-            <a href="projects.html" class="text-neutral-default hover:text-primary transition duration-300">Projects</a>
-            <a href="testimonials.html" class="text-neutral-default hover:text-primary transition duration-300">Testimonials</a>
-            <a href="contact.html" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md transition duration-300">Contact Us</a>
+        <nav class="hidden md:flex space-x-1 items-center">
+            <a href="index.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Home</a>
+            <a href="about.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">About</a>
+            <a href="services.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Services</a>
+            <a href="projects.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Projects</a>
+            <a href="testimonials.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Testimonials</a>
+            <a href="contact.html" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md transition-all duration-300">Contact Us</a>
         </nav>
         <div class="md:hidden">
             <button id="mobile-menu-button" class="text-neutral-dark focus:outline-none">
@@ -40,33 +40,63 @@
 
     <main class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-6 md:px-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-12 text-center">Our Portfolio of Work</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-10 text-center">Our Impactful Projects</h1>
             <p class="text-lg text-neutral-default max-w-3xl mx-auto text-center mb-16">
-                We take pride in our diverse portfolio of projects, showcasing our commitment to delivering impactful research and consulting solutions. Below are some examples of our work. (Content will be dynamically populated from the database).
+                We take pride in our diverse portfolio of projects, showcasing our commitment to delivering impactful research and consulting solutions. Below are some examples of our work that highlight the breadth of our expertise and our dedication to client success. (Full project details will be available once the admin panel is functional).
             </p>
 
-            <div id="project-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Placeholder for project items -->
-            <!-- Example Project Item (to be dynamically generated later) -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <img src="https://via.placeholder.com/400x250/06b6d4/ffffff?text=Project+Image" alt="Project Placeholder Image" class="w-full h-48 object-cover rounded-md mb-4">
-                <h2 class="text-xl font-semibold text-primary-dark mb-2">Project Title Placeholder</h2>
-                <p class="text-neutral-default text-sm mb-3">Brief project description placeholder. This will be replaced with actual project content.</p>
-                <p class="text-neutral-default text-sm font-medium"><strong>Outcome:</strong> Key outcome placeholder.</p>
-                <!-- <a href="#" class="text-accent hover:underline mt-3 inline-block">View Details</a> -->
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <img src="https://via.placeholder.com/400x250/06b6d4/ffffff?text=Project+Image" alt="Project Placeholder Image" class="w-full h-48 object-cover rounded-md mb-4">
-                <h2 class="text-xl font-semibold text-primary-dark mb-2">Another Project Example</h2>
-                <p class="text-neutral-default text-sm mb-3">This is another example of how a project might look once populated from the database.</p>
-                <p class="text-neutral-default text-sm font-medium"><strong>Outcome:</strong> Significant impact achieved.</p>
-            </div>
-            <!-- End of placeholder -->
-        </div>
-        <p class="text-center text-neutral-default mt-12" id="no-projects-message" style="display: none;">
-            Currently, there are no projects to display. Please check back later or contact us for more information.
-        </p>
+            <div id="project-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+                <!-- Project Card 1 -->
+                <div id="project-alpha" class="bg-white rounded-xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1">
+                    <img src="https://via.placeholder.com/600x400/06b6d4/ffffff?text=Health+Survey" alt="Community Health Initiative Evaluation" class="w-full h-56 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h2 class="text-2xl font-semibold text-primary-dark mb-3">Community Health Initiative Evaluation</h2>
+                        <p class="text-neutral-default text-base leading-relaxed flex-grow mb-4">Conducted a comprehensive endline evaluation for a multi-year community health program focusing on maternal and child health outcomes in rural districts. Assessed impact, efficiency, and sustainability.</p>
+                        <p class="text-sm text-accent font-semibold mb-1">Client: International NGO</p>
+                        <p class="text-sm text-neutral-500 mb-5">Completed: March 2024</p>
+                        <a href="#project-alpha" class="mt-auto bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md text-sm transition duration-300 self-start">Explore Project</a>
+                    </div>
+                </div>
 
+                <!-- Project Card 2 -->
+                <div id="project-beta" class="bg-white rounded-xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1">
+                    <img src="https://via.placeholder.com/600x400/fbbf24/000000?text=Education+Study" alt="Youth Literacy Program M&E" class="w-full h-56 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h2 class="text-2xl font-semibold text-primary-dark mb-3">Youth Literacy Program M&E Framework</h2>
+                        <p class="text-neutral-default text-base leading-relaxed flex-grow mb-4">Developed a robust Monitoring and Evaluation framework for a national youth literacy program. Included theory of change development, indicator selection, and data collection tool design.</p>
+                        <p class="text-sm text-accent font-semibold mb-1">Client: Ministry of Education</p>
+                        <p class="text-sm text-neutral-500 mb-5">Completed: January 2024</p>
+                        <a href="#project-beta" class="mt-auto bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md text-sm transition duration-300 self-start">Explore Project</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div id="project-gamma" class="bg-white rounded-xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1">
+                    <img src="https://via.placeholder.com/600x400/ec4899/ffffff?text=Agri+Feasibility" alt="Agricultural Value Chain Feasibility" class="w-full h-56 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h2 class="text-2xl font-semibold text-primary-dark mb-3">Agricultural Value Chain Feasibility Study</h2>
+                        <p class="text-neutral-default text-base leading-relaxed flex-grow mb-4">Assessed the feasibility of developing a new agricultural value chain for smallholder farmers, focusing on market access, climate resilience, and financial viability for a private sector client.</p>
+                        <p class="text-sm text-accent font-semibold mb-1">Client: Agribusiness Enterprise</p>
+                        <p class="text-sm text-neutral-500 mb-5">Completed: October 2023</p>
+                        <a href="#project-gamma" class="mt-auto bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md text-sm transition duration-300 self-start">Explore Project</a>
+                    </div>
+                </div>
+                 <!-- Project Card 4 (Optional) -->
+                <div id="project-delta" class="bg-white rounded-xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1">
+                    <img src="https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Gov+Policy" alt="Policy Impact Analysis" class="w-full h-56 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h2 class="text-2xl font-semibold text-primary-dark mb-3">Social Protection Policy Impact Analysis</h2>
+                        <p class="text-neutral-default text-base leading-relaxed flex-grow mb-4">Analyzed the impact of a national social protection policy on vulnerable households, providing recommendations for policy refinement and expansion to a government department.</p>
+                        <p class="text-sm text-accent font-semibold mb-1">Client: Government Department</p>
+                        <p class="text-sm text-neutral-500 mb-5">Completed: June 2023</p>
+                        <a href="#project-delta" class="mt-auto bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md text-sm transition duration-300 self-start">Explore Project</a>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-neutral-default mt-16" id="no-projects-message" style="display: none;">
+                Currently, there are no further projects to display. Please check back later or contact us for more information on our work.
+            </p>
+        </div>
     </main>
 
 <footer class="bg-neutral-dark text-neutral-light py-12 px-4">

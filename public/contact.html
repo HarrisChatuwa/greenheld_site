@@ -11,13 +11,13 @@
 <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         <a href="index.html" class="text-2xl font-bold text-primary">Greemheld</a>
-        <nav class="hidden md:flex space-x-6 items-center">
-            <a href="index.html" class="text-neutral-default hover:text-primary transition duration-300">Home</a>
-            <a href="about.html" class="text-neutral-default hover:text-primary transition duration-300">About</a>
-            <a href="services.html" class="text-neutral-default hover:text-primary transition duration-300">Services</a>
-            <a href="projects.html" class="text-neutral-default hover:text-primary transition duration-300">Projects</a>
-            <a href="testimonials.html" class="text-neutral-default hover:text-primary transition duration-300">Testimonials</a>
-            <a href="contact.html" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md transition duration-300">Contact Us</a>
+        <nav class="hidden md:flex space-x-1 items-center">
+            <a href="index.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Home</a>
+            <a href="about.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">About</a>
+            <a href="services.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Services</a>
+            <a href="projects.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Projects</a>
+            <a href="testimonials.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Testimonials</a>
+            <a href="contact.html" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md transition-all duration-300">Contact Us</a>
         </nav>
         <div class="md:hidden">
             <button id="mobile-menu-button" class="text-neutral-dark focus:outline-none">
@@ -40,70 +40,94 @@
 
     <main class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-6 md:px-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-12 text-center">Get In Touch</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-10 text-center">Get In Touch With Us</h1>
             <p class="text-lg text-neutral-default max-w-3xl mx-auto text-center mb-16">
-                We're here to answer your questions, discuss potential projects, or explore collaboration opportunities. Please use the form below or reach out via our contact details.
+                We're here to answer your questions, discuss potential projects, or explore collaboration opportunities. Please use the form below or reach out directly via our contact details. We look forward to hearing from you!
             </p>
 
-            <div class="grid md:grid-cols-2 gap-12 items-start">
-            <!-- Contact Form -->
-            <section id="contact-form-section" class="bg-white p-8 rounded-lg shadow-lg">
-                <h2 class="text-2xl font-semibold text-primary-dark mb-6">Send Us a Message</h2>
-                <form id="contactForm" action="php/contact_handler.php" method="POST">
-                    <div class="mb-4">
-                        <label for="name" class="block text-neutral-default text-sm font-medium mb-2">Full Name</label>
-                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:ring-primary focus:border-primary">
-                        <p class="text-red-500 text-xs italic mt-1" id="nameError" style="display:none;">Please enter your name.</p>
-                    </div>
-                    <div class="mb-4">
-                        <label for="email" class="block text-neutral-default text-sm font-medium mb-2">Email Address</label>
-                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:ring-primary focus:border-primary">
-                        <p class="text-red-500 text-xs italic mt-1" id="emailError" style="display:none;">Please enter a valid email address.</p>
-                    </div>
-                    <div class="mb-4">
-                        <label for="subject" class="block text-neutral-default text-sm font-medium mb-2">Subject</label>
-                        <input type="text" id="subject" name="subject" required class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:ring-primary focus:border-primary">
-                        <p class="text-red-500 text-xs italic mt-1" id="subjectError" style="display:none;">Please enter a subject.</p>
-                    </div>
-                    <div class="mb-6">
-                        <label for="message" class="block text-neutral-default text-sm font-medium mb-2">Message</label>
-                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:ring-primary focus:border-primary"></textarea>
-                        <p class="text-red-500 text-xs italic mt-1" id="messageError" style="display:none;">Please enter your message.</p>
-                    </div>
-                    <div>
-                        <button type="submit" class="w-full bg-accent hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-md transition duration-300">Send Message</button>
-                    </div>
-                    <div id="form-feedback" class="mt-4 text-center"></div>
-                </form>
-            </section>
+            <div class="grid md:grid-cols-5 gap-10 lg:gap-16 items-start">
+                <!-- Contact Form -->
+                <section id="contact-form-section" class="md:col-span-3 bg-white p-8 rounded-xl shadow-xl border border-neutral-200">
+                    <h2 class="text-3xl font-semibold text-primary-dark mb-8">Send Us a Message</h2>
+                    <form id="contactForm" action="php/contact_handler.php" method="POST">
+                        <div class="mb-5">
+                            <label for="name" class="block text-neutral-default text-base font-medium mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-shadow duration-200" placeholder="e.g., John Doe">
+                            <p class="text-red-500 text-sm italic mt-1" id="nameError" style="display:none;">Please enter your name.</p>
+                        </div>
+                        <div class="mb-5">
+                            <label for="email" class="block text-neutral-default text-base font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-shadow duration-200" placeholder="e.g., you@example.com">
+                            <p class="text-red-500 text-sm italic mt-1" id="emailError" style="display:none;">Please enter a valid email address.</p>
+                        </div>
+                        <div class="mb-5">
+                            <label for="subject" class="block text-neutral-default text-base font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-shadow duration-200" placeholder="e.g., Inquiry about M&E Services">
+                            <p class="text-red-500 text-sm italic mt-1" id="subjectError" style="display:none;">Please enter a subject.</p>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-neutral-default text-base font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-shadow duration-200" placeholder="Your detailed message..."></textarea>
+                            <p class="text-red-500 text-sm italic mt-1" id="messageError" style="display:none;">Please enter your message.</p>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-accent hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-lg transform hover:scale-105">Send Message</button>
+                        </div>
+                        <div id="form-feedback" class="mt-5 text-center text-base"></div>
+                    </form>
+                </section>
 
-            <!-- Contact Details -->
-            <section id="contact-details" class="pt-8 md:pt-0">
-                <h2 class="text-2xl font-semibold text-primary-dark mb-6">Our Contact Information</h2>
-                <div class="space-y-4 text-neutral-default">
-                    <p>
-                        <strong>Address:</strong><br>
-                        Placeholder Street Name, City, Postal Code<br>
-                        Country
-                    </p>
-                    <p>
-                        <strong>Phone:</strong><br>
-                        <a href="tel:+1234567890" class="text-primary hover:underline">+1 (234) 567-890</a>
-                    </p>
-                    <p>
-                        <strong>Email:</strong><br>
-                        <a href="mailto:info@greemheld.com" class="text-primary hover:underline">info@greemheld.com</a>
-                    </p>
-                </div>
-                <!-- Optional: Map Integration Placeholder -->
-                <div class="mt-8">
-                    <h3 class="text-xl font-semibold text-primary-dark mb-4">Find Us Here</h3>
-                    <!-- Replace with actual map embed code or image -->
-                    <div class="aspect-w-16 aspect-h-9 bg-neutral-200 rounded-md flex items-center justify-center">
-                        <p class="text-neutral-default">Map Placeholder</p>
+                <!-- Contact Details -->
+                <aside id="contact-details" class="md:col-span-2 bg-neutral-light p-8 rounded-xl shadow-xl space-y-6">
+                    <h2 class="text-3xl font-semibold text-primary-dark mb-6">Our Information</h2>
+
+                    <div class="text-neutral-default">
+                        <h3 class="text-lg font-semibold text-primary mb-1 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            Physical Address:
+                        </h3>
+                        <p class="ml-7">Area 10, Plot 234<br>Lilongwe, Malawi</p>
                     </div>
-                </div>
-            </section>
+
+                    <div class="text-neutral-default">
+                        <h3 class="text-lg font-semibold text-primary mb-1 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            Email Address:
+                        </h3>
+                        <a href="mailto:info@greemheld.com" class="text-primary hover:underline ml-7 block">info@greemheld.com</a>
+                    </div>
+
+                    <div class="text-neutral-default">
+                        <h3 class="text-lg font-semibold text-primary mb-1 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.308 1.154a11.034 11.034 0 005.364 5.364l1.154-2.308a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            Phone Number:
+                        </h3>
+                        <a href="tel:+265999123456" class="text-primary hover:underline ml-7 block">+265 999 123 456</a>
+                    </div>
+
+                    <div class="text-neutral-default">
+                        <h3 class="text-lg font-semibold text-primary mb-1 flex items-center">
+                             <svg class="w-5 h-5 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Business Hours:
+                        </h3>
+                        <p class="ml-7">Monday - Friday: 8:00 AM - 5:00 PM CAT</p>
+                    </div>
+
+                    <!-- Optional: Map Integration Placeholder -->
+                    <div class="mt-6 pt-6 border-t border-neutral-300">
+                        <h3 class="text-xl font-semibold text-primary-dark mb-3">Find Us Here</h3>
+                        <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-md">
+                            <iframe
+                                src="https://www.openstreetmap.org/export/embed.html?bbox=33.7623%2C-13.9884%2C33.8023%2C-13.9684&layer=mapnik&marker=-13.9784%2C33.7823"
+                                style="border:0; width: 100%; height: 100%;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </aside>
+            </div>
         </div>
     </main>
 

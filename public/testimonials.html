@@ -11,13 +11,13 @@
 <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         <a href="index.html" class="text-2xl font-bold text-primary">Greemheld</a>
-        <nav class="hidden md:flex space-x-6 items-center">
-            <a href="index.html" class="text-neutral-default hover:text-primary transition duration-300">Home</a>
-            <a href="about.html" class="text-neutral-default hover:text-primary transition duration-300">About</a>
-            <a href="services.html" class="text-neutral-default hover:text-primary transition duration-300">Services</a>
-            <a href="projects.html" class="text-neutral-default hover:text-primary transition duration-300">Projects</a>
-            <a href="testimonials.html" class="text-neutral-default hover:text-primary transition duration-300">Testimonials</a>
-            <a href="contact.html" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md transition duration-300">Contact Us</a>
+        <nav class="hidden md:flex space-x-1 items-center">
+            <a href="index.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Home</a>
+            <a href="about.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">About</a>
+            <a href="services.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Services</a>
+            <a href="projects.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Projects</a>
+            <a href="testimonials.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Testimonials</a>
+            <a href="contact.html" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md transition-all duration-300">Contact Us</a>
         </nav>
         <div class="md:hidden">
             <button id="mobile-menu-button" class="text-neutral-dark focus:outline-none">
@@ -40,36 +40,48 @@
 
     <main class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-6 md:px-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-12 text-center">What Our Clients Say</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-10 text-center">What Our Valued Clients Say</h1>
             <p class="text-lg text-neutral-default max-w-3xl mx-auto text-center mb-16">
-                We value the relationships we build with our clients and are proud of the positive feedback we receive. Here’s what some of them have to say about their experience with Greemheld. (Content will be dynamically populated from the database).
+                We cherish the partnerships we build and are proud of the positive feedback received from those we've worked with. These testimonials reflect our commitment to quality, insight, and collaborative success. (Testimonials will be dynamically populated from the admin panel).
             </p>
 
-            <div id="testimonial-list" class="space-y-8 max-w-3xl mx-auto">
-            <!-- Placeholder for testimonial items -->
-            <!-- Example Testimonial Item (to be dynamically generated later) -->
-            <div class="bg-white p-6 rounded-lg shadow-lg flex items-start space-x-4">
-                <img src="https://via.placeholder.com/100/06b6d4/ffffff?text=Client" alt="Client Placeholder" class="w-16 h-16 rounded-full object-cover">
-                <div>
-                    <p class="text-neutral-default italic mb-2">"This is a placeholder testimonial. The actual client feedback will be displayed here. We are very satisfied with the results!"</p>
-                    <p class="font-semibold text-primary-dark">- Client Name Placeholder</p>
-                    <p class="text-sm text-neutral-default">CEO, Placeholder Company</p>
+            <div id="testimonial-list" class="grid md:grid-cols-2 gap-x-8 gap-y-10 max-w-5xl mx-auto">
+                <!-- Testimonial Card 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-xl border border-neutral-200 flex flex-col items-center text-center transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                    <img src="https://via.placeholder.com/120/06b6d4/ffffff?text=A.C." alt="Client A.C." class="w-24 h-24 rounded-full object-cover mb-5 shadow-md border-2 border-primary">
+                    <p class="text-neutral-default italic text-lg leading-relaxed mb-6 flex-grow">"Greemheld's insights were invaluable for our program's success. Their rigorous approach to data collection and the clarity of their final report helped us secure further funding and refine our strategy. Truly exceptional work!"</p>
+                    <p class="font-bold text-primary-dark text-xl">- A. Client</p>
+                    <p class="text-sm text-accent font-medium">NGO Director, Health Sector</p>
                 </div>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg flex items-start space-x-4">
-                <img src="https://via.placeholder.com/100/06b6d4/ffffff?text=Client" alt="Client Placeholder" class="w-16 h-16 rounded-full object-cover">
-                <div>
-                    <p class="text-neutral-default italic mb-2">"Another example of a glowing testimonial highlighting the excellent work and insightful analysis provided."</p>
-                    <p class="font-semibold text-primary-dark">- Another Client</p>
-                    <p class="text-sm text-neutral-default">Director, Example Org</p>
-                </div>
-            </div>
-            <!-- End of placeholder -->
-        </div>
-        <p class="text-center text-neutral-default mt-12" id="no-testimonials-message" style="display: none;">
-            We are currently gathering testimonials from our valued clients. Please check back soon!
-        </p>
 
+                <!-- Testimonial Card 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-xl border border-neutral-200 flex flex-col items-center text-center transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                    <img src="https://via.placeholder.com/120/fbbf24/000000?text=B.P." alt="Client B.P." class="w-24 h-24 rounded-full object-cover mb-5 shadow-md border-2 border-primary">
+                    <p class="text-neutral-default italic text-lg leading-relaxed mb-6 flex-grow">"The feasibility study conducted by Greemheld was thorough, insightful, and delivered on time. It provided us with the critical information needed to make a confident investment decision. Their professionalism is top-notch."</p>
+                    <p class="font-bold text-primary-dark text-xl">- B. Partner</p>
+                    <p class="text-sm text-accent font-medium">Development Agency Lead</p>
+                </div>
+
+                <!-- Testimonial Card 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-xl border border-neutral-200 flex flex-col items-center text-center transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                    <img src="https://via.placeholder.com/120/ec4899/ffffff?text=C.M." alt="Client C.M." class="w-24 h-24 rounded-full object-cover mb-5 shadow-md border-2 border-primary">
+                    <p class="text-neutral-default italic text-lg leading-relaxed mb-6 flex-grow">"We engaged Greemheld for an M&E system design, and they exceeded our expectations. The framework is practical, and the team's capacity building support was excellent. We now feel much more equipped to track our impact."</p>
+                    <p class="font-bold text-primary-dark text-xl">- C. Manager</p>
+                    <p class="text-sm text-accent font-medium">Education Program Coordinator</p>
+                </div>
+
+                <!-- Testimonial Card 4 -->
+                <div class="bg-white p-8 rounded-xl shadow-xl border border-neutral-200 flex flex-col items-center text-center transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                    <img src="https://via.placeholder.com/120/8b5cf6/ffffff?text=D.S." alt="Client D.S." class="w-24 h-24 rounded-full object-cover mb-5 shadow-md border-2 border-primary">
+                    <p class="text-neutral-default italic text-lg leading-relaxed mb-6 flex-grow">"The professionalism and deep understanding of local context demonstrated by Greemheld were key to the success of our baseline study. The quality of data and the subsequent analysis were outstanding."</p>
+                    <p class="font-bold text-primary-dark text-xl">- D. Stevens</p>
+                    <p class="text-sm text-accent font-medium">Country Representative, International Foundation</p>
+                </div>
+            </div>
+            <p class="text-center text-neutral-default mt-16" id="no-testimonials-message" style="display: none;">
+                We are currently gathering more testimonials from our valued clients. Please check back soon!
+            </p>
+        </div>
     </main>
 
 <footer class="bg-neutral-dark text-neutral-light py-12 px-4">

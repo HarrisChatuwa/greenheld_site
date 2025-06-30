@@ -123,6 +123,52 @@ $(document).ready(function() {
         $('#currentYear').text(new Date().getFullYear());
     }
 
+    // FadeIn for project and testimonial cards on their respective pages
+    if ($('#project-list').length) {
+        $('#project-list > div').css('opacity', 0).each(function(i) {
+            $(this).delay(i * 150).animate({'opacity': 1}, 500);
+        });
+    }
+
+    if ($('#testimonial-list').length) {
+        $('#testimonial-list > div').css('opacity', 0).each(function(i) {
+            $(this).delay(i * 150).animate({'opacity': 1}, 500);
+        });
+    }
+
+    // Scroll-based animations for sections
+    const $sectionsToAnimate = $('main section[id]'); // Target sections within main with an ID
+
+    if ("IntersectionObserver" in window) {
+        // Set initial state for sections to be animated (except hero)
+        $sectionsToAnimate.each(function() {
+            if (!$(this).is('#hero')) { // Hero section is typically visible on load
+                $(this).addClass('section-hidden');
+            } else {
+                $(this).addClass('section-visible'); // Ensure hero is marked visible
+            }
+        });
+
+        let sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    $(entry.target).removeClass('section-hidden').addClass('section-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 , rootMargin: "0px 0px -50px 0px"}); // Trigger when 15% of the section is visible, slightly offset from bottom
+
+        $sectionsToAnimate.each(function() {
+            if ($(this).hasClass('section-hidden')) { // Only observe initially hidden sections
+                sectionObserver.observe(this);
+            }
+        });
+
+    } else {
+        // Fallback for browsers that don't support IntersectionObserver: just show all sections
+        $sectionsToAnimate.removeClass('section-hidden').addClass('section-visible');
+    }
+
     // Optional: Prevent FOUC (Flash of Unstyled Content) - Basic approach
     // $('body').css('opacity', 0).animate({opacity: 1}, 300);
     // More robust FOUC prevention is often handled with CSS or by placing scripts correctly.
