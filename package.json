@@ -1,0 +1,20 @@
+{
+  "name": "greemheld-website",
+  "version": "1.0.0",
+  "description": "Greemheld Social Research and Consulting Website",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./public/css/style.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./public/css/style.css --minify"
+  },
+  "keywords": [
+    "php",
+    "tailwind",
+    "jquery"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

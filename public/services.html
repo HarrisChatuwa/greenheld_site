@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Greemheld Social Research and Consulting</title>
+    <link href="css/style.css" rel="stylesheet">
+    <meta name="description" content="Explore the range of social research and consulting services offered by Greemheld.">
+</head>
+<body class="bg-neutral-light font-sans text-neutral-dark">
+<header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold text-primary">Greemheld</a>
+        <nav class="hidden md:flex space-x-6 items-center">
+            <a href="index.html" class="text-neutral-default hover:text-primary transition duration-300">Home</a>
+            <a href="about.html" class="text-neutral-default hover:text-primary transition duration-300">About</a>
+            <a href="services.html" class="text-neutral-default hover:text-primary transition duration-300">Services</a>
+            <a href="projects.html" class="text-neutral-default hover:text-primary transition duration-300">Projects</a>
+            <a href="testimonials.html" class="text-neutral-default hover:text-primary transition duration-300">Testimonials</a>
+            <a href="contact.html" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md transition duration-300">Contact Us</a>
+        </nav>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-neutral-dark focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg py-2">
+        <a href="index.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Home</a>
+        <a href="about.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">About</a>
+        <a href="services.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Services</a>
+        <a href="projects.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Projects</a>
+        <a href="testimonials.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Testimonials</a>
+        <a href="contact.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Contact Us</a>
+    </div>
+</header>
+
+    <main class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-12 text-center">Our Comprehensive Services</h1>
+            <p class="text-lg text-neutral-default max-w-3xl mx-auto text-center mb-16">
+                Greemheld offers a wide array of social research and consulting services designed to meet the unique needs of our clients. We are committed to delivering actionable insights and strategic guidance.
+            </p>
+
+            <div id="services-list" class="space-y-16">
+                <!-- Service Item 1: Research Design -->
+                <section id="research-design" class="bg-neutral-light p-8 md:p-12 rounded-xl shadow-lg scroll-mt-24">
+                    <h2 class="text-3xl font-semibold text-primary-dark mb-6">Research Design & Methodology</h2>
+                    <p class="text-neutral-default leading-relaxed mb-4">
+                        Effective research begins with a solid foundation. We specialize in designing robust research methodologies tailored to your specific questions. This includes quantitative, qualitative, and mixed-methods approaches, survey design, interview protocol development, and sampling strategies.
+                    </p>
+                    <ul class="list-disc list-inside text-neutral-default space-y-2 mb-4">
+                        <li>Survey instrument development and validation</li>
+                        <li>Qualitative interview and focus group guide creation</li>
+                        <li>Experimental and quasi-experimental design</li>
+                        <li>Sampling and recruitment strategy</li>
+                    </ul>
+                    <a href="contact.html?service=Research%20Design" class="inline-block bg-accent hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300">Inquire about Research Design</a>
+                </section>
+
+                <!-- Service Item 2: Data Analysis -->
+                <section id="data-analysis" class="bg-white p-8 md:p-12 rounded-xl shadow-lg scroll-mt-24 border border-neutral-200">
+                    <h2 class="text-3xl font-semibold text-primary-dark mb-6">Data Collection & Analysis</h2>
+                    <p class="text-neutral-default leading-relaxed mb-4">
+                        Our team is proficient in a variety of data collection techniques and advanced analytical methods. We transform raw data into meaningful insights, providing clear, concise, and actionable reports.
+                    </p>
+                    <ul class="list-disc list-inside text-neutral-default space-y-2 mb-4">
+                        <li>Quantitative analysis (statistical modeling, regression, etc.)</li>
+                        <li>Qualitative analysis (thematic analysis, content analysis)</li>
+                        <li>Data visualization and dashboard creation</li>
+                        <li>Reporting and presentation of findings</li>
+                    </ul>
+                    <a href="contact.html?service=Data%20Analysis" class="inline-block bg-accent hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300">Inquire about Data Analysis</a>
+                </section>
+
+                <!-- Service Item 3: Strategic Consulting -->
+                <section id="strategic-consulting" class="bg-neutral-light p-8 md:p-12 rounded-xl shadow-lg scroll-mt-24">
+                    <h2 class="text-3xl font-semibold text-primary-dark mb-6">Strategic Consulting & Advisory</h2>
+                    <p class="text-neutral-default leading-relaxed mb-4">
+                        Beyond research, we offer strategic consulting to help organizations apply insights effectively. We work with you to develop evidence-based strategies, program evaluations, and policy recommendations.
+                    </p>
+                    <ul class="list-disc list-inside text-neutral-default space-y-2 mb-4">
+                        <li>Program evaluation and impact assessment</li>
+                        <li>Policy analysis and development</li>
+                        <li>Stakeholder engagement and workshop facilitation</li>
+                        <li>Strategic planning and capacity building</li>
+                    </ul>
+                    <a href="contact.html?service=Strategic%20Consulting" class="inline-block bg-accent hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300">Inquire about Strategic Consulting</a>
+                </section>
+
+                <!-- Add more detailed services as needed -->
+            </div>
+        </div>
+    </main>
+
+<footer class="bg-neutral-dark text-neutral-light py-12 px-4">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+        <div>
+            <h3 class="text-xl font-semibold mb-4 text-white">Greemheld</h3>
+            <p class="text-sm">
+                Placeholder Street Name, City, Postal Code<br>
+                Country
+            </p>
+            <p class="text-sm mt-2">
+                Email: <a href="mailto:info@greemheld.com" class="hover:text-primary transition duration-300">info@greemheld.com</a>
+            </p>
+            <p class="text-sm">
+                Phone: <a href="tel:+1234567890" class="hover:text-primary transition duration-300">+1 (234) 567-890</a>
+            </p>
+        </div>
+        <div>
+            <h3 class="text-xl font-semibold mb-4 text-white">Quick Links</h3>
+            <ul class="space-y-2 text-sm">
+                <li><a href="index.html" class="hover:text-primary transition duration-300">Home</a></li>
+                <li><a href="about.html" class="hover:text-primary transition duration-300">About Us</a></li>
+                <li><a href="services.html" class="hover:text-primary transition duration-300">Services</a></li>
+                <li><a href="projects.html" class="hover:text-primary transition duration-300">Projects</a></li>
+                <li><a href="contact.html" class="hover:text-primary transition duration-300">Contact</a></li>
+                <li><a href="#" class="hover:text-primary transition duration-300">Privacy Policy</a></li> <!-- Placeholder -->
+                <li><a href="#" class="hover:text-primary transition duration-300">Terms of Service</a></li> <!-- Placeholder -->
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-xl font-semibold mb-4 text-white">Connect With Us</h3>
+            <!-- Placeholder for social media icons -->
+            <div class="flex justify-center md:justify-start space-x-4 mt-2">
+                <a href="#" class="hover:text-primary transition duration-300">FB</a>
+                <a href="#" class="hover:text-primary transition duration-300">TW</a>
+                <a href="#" class="hover:text-primary transition duration-300">LI</a>
+            </div>
+        </div>
+    </div>
+    <div class="text-center text-sm mt-10 border-t border-neutral-700 pt-8">
+        <p>&copy; <span id="currentYear"></span> Greemheld Social Research and Consulting. All Rights Reserved.</p>
+    </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

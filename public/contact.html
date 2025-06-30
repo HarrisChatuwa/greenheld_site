@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Greemheld Social Research and Consulting</title>
+    <link href="css/style.css" rel="stylesheet">
+    <meta name="description" content="Get in touch with Greemheld Social Research and Consulting for inquiries or collaborations.">
+</head>
+<body class="bg-neutral-light font-sans text-neutral-dark">
+<header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold text-primary">Greemheld</a>
+        <nav class="hidden md:flex space-x-6 items-center">
+            <a href="index.html" class="text-neutral-default hover:text-primary transition duration-300">Home</a>
+            <a href="about.html" class="text-neutral-default hover:text-primary transition duration-300">About</a>
+            <a href="services.html" class="text-neutral-default hover:text-primary transition duration-300">Services</a>
+            <a href="projects.html" class="text-neutral-default hover:text-primary transition duration-300">Projects</a>
+            <a href="testimonials.html" class="text-neutral-default hover:text-primary transition duration-300">Testimonials</a>
+            <a href="contact.html" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md transition duration-300">Contact Us</a>
+        </nav>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-neutral-dark focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg py-2">
+        <a href="index.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Home</a>
+        <a href="about.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">About</a>
+        <a href="services.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Services</a>
+        <a href="projects.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Projects</a>
+        <a href="testimonials.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Testimonials</a>
+        <a href="contact.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Contact Us</a>
+    </div>
+</header>
+
+    <main class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-12 text-center">Get In Touch</h1>
+            <p class="text-lg text-neutral-default max-w-3xl mx-auto text-center mb-16">
+                We're here to answer your questions, discuss potential projects, or explore collaboration opportunities. Please use the form below or reach out via our contact details.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+            <!-- Contact Form -->
+            <section id="contact-form-section" class="bg-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold text-primary-dark mb-6">Send Us a Message</h2>
+                <form id="contactForm" action="php/contact_handler.php" method="POST">
+                    <div class="mb-4">
+                        <label for="name" class="block text-neutral-default text-sm font-medium mb-2">Full Name</label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:ring-primary focus:border-primary">
+                        <p class="text-red-500 text-xs italic mt-1" id="nameError" style="display:none;">Please enter your name.</p>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-neutral-default text-sm font-medium mb-2">Email Address</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:ring-primary focus:border-primary">
+                        <p class="text-red-500 text-xs italic mt-1" id="emailError" style="display:none;">Please enter a valid email address.</p>
+                    </div>
+                    <div class="mb-4">
+                        <label for="subject" class="block text-neutral-default text-sm font-medium mb-2">Subject</label>
+                        <input type="text" id="subject" name="subject" required class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:ring-primary focus:border-primary">
+                        <p class="text-red-500 text-xs italic mt-1" id="subjectError" style="display:none;">Please enter a subject.</p>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-neutral-default text-sm font-medium mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:ring-primary focus:border-primary"></textarea>
+                        <p class="text-red-500 text-xs italic mt-1" id="messageError" style="display:none;">Please enter your message.</p>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full bg-accent hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-md transition duration-300">Send Message</button>
+                    </div>
+                    <div id="form-feedback" class="mt-4 text-center"></div>
+                </form>
+            </section>
+
+            <!-- Contact Details -->
+            <section id="contact-details" class="pt-8 md:pt-0">
+                <h2 class="text-2xl font-semibold text-primary-dark mb-6">Our Contact Information</h2>
+                <div class="space-y-4 text-neutral-default">
+                    <p>
+                        <strong>Address:</strong><br>
+                        Placeholder Street Name, City, Postal Code<br>
+                        Country
+                    </p>
+                    <p>
+                        <strong>Phone:</strong><br>
+                        <a href="tel:+1234567890" class="text-primary hover:underline">+1 (234) 567-890</a>
+                    </p>
+                    <p>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:info@greemheld.com" class="text-primary hover:underline">info@greemheld.com</a>
+                    </p>
+                </div>
+                <!-- Optional: Map Integration Placeholder -->
+                <div class="mt-8">
+                    <h3 class="text-xl font-semibold text-primary-dark mb-4">Find Us Here</h3>
+                    <!-- Replace with actual map embed code or image -->
+                    <div class="aspect-w-16 aspect-h-9 bg-neutral-200 rounded-md flex items-center justify-center">
+                        <p class="text-neutral-default">Map Placeholder</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+<footer class="bg-neutral-dark text-neutral-light py-12 px-4">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+        <div>
+            <h3 class="text-xl font-semibold mb-4 text-white">Greemheld</h3>
+            <p class="text-sm">
+                Placeholder Street Name, City, Postal Code<br>
+                Country
+            </p>
+            <p class="text-sm mt-2">
+                Email: <a href="mailto:info@greemheld.com" class="hover:text-primary transition duration-300">info@greemheld.com</a>
+            </p>
+            <p class="text-sm">
+                Phone: <a href="tel:+1234567890" class="hover:text-primary transition duration-300">+1 (234) 567-890</a>
+            </p>
+        </div>
+        <div>
+            <h3 class="text-xl font-semibold mb-4 text-white">Quick Links</h3>
+            <ul class="space-y-2 text-sm">
+                <li><a href="index.html" class="hover:text-primary transition duration-300">Home</a></li>
+                <li><a href="about.html" class="hover:text-primary transition duration-300">About Us</a></li>
+                <li><a href="services.html" class="hover:text-primary transition duration-300">Services</a></li>
+                <li><a href="projects.html" class="hover:text-primary transition duration-300">Projects</a></li>
+                <li><a href="contact.html" class="hover:text-primary transition duration-300">Contact</a></li>
+                <li><a href="#" class="hover:text-primary transition duration-300">Privacy Policy</a></li> <!-- Placeholder -->
+                <li><a href="#" class="hover:text-primary transition duration-300">Terms of Service</a></li> <!-- Placeholder -->
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-xl font-semibold mb-4 text-white">Connect With Us</h3>
+            <!-- Placeholder for social media icons -->
+            <div class="flex justify-center md:justify-start space-x-4 mt-2">
+                <a href="#" class="hover:text-primary transition duration-300">FB</a>
+                <a href="#" class="hover:text-primary transition duration-300">TW</a>
+                <a href="#" class="hover:text-primary transition duration-300">LI</a>
+            </div>
+        </div>
+    </div>
+    <div class="text-center text-sm mt-10 border-t border-neutral-700 pt-8">
+        <p>&copy; <span id="currentYear"></span> Greemheld Social Research and Consulting. All Rights Reserved.</p>
+    </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
