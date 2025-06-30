@@ -1,3 +1,25 @@
+<?php
+require_once '../config/db.php'; // Go up one level to find config
+
+// Fetch latest 3 projects
+try {
+    $stmt_projects = $pdo->query("SELECT id, title, LEFT(description, 120) AS description_snippet, image_url FROM projects ORDER BY created_at DESC LIMIT 3");
+    $featured_projects = $stmt_projects->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    error_log("Error fetching featured projects: " . $e->getMessage());
+    $featured_projects = []; // Default to empty array on error
+}
+
+// Fetch latest 2 testimonials
+try {
+    $stmt_testimonials = $pdo->query("SELECT quote, client_name, client_title_company FROM testimonials ORDER BY created_at DESC LIMIT 2");
+    $featured_testimonials = $stmt_testimonials->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    error_log("Error fetching featured testimonials: " . $e->getMessage());
+    $featured_testimonials = []; // Default to empty array on error
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +32,13 @@
 <body class="bg-neutral-light font-sans text-neutral-dark">
 <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="index.html" class="text-2xl font-bold text-primary">Greemheld</a>
+        <a href="index.php" class="text-2xl font-bold text-primary">Greemheld</a>
         <nav class="hidden md:flex space-x-1 items-center">
-            <a href="index.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Home</a>
+            <a href="index.php" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Home</a>
             <a href="about.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">About</a>
             <a href="services.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Services</a>
-            <a href="projects.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Projects</a>
-            <a href="testimonials.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Testimonials</a>
+            <a href="projects.php" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Projects</a>
+            <a href="testimonials.php" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Testimonials</a>
             <a href="contact.html" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md transition-all duration-300">Contact Us</a>
         </nav>
         <div class="md:hidden">
@@ -29,11 +51,11 @@
     </div>
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg py-2">
-        <a href="index.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Home</a>
+        <a href="index.php" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Home</a>
         <a href="about.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">About</a>
         <a href="services.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Services</a>
-        <a href="projects.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Projects</a>
-        <a href="testimonials.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Testimonials</a>
+        <a href="projects.php" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Projects</a>
+        <a href="testimonials.php" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Testimonials</a>
         <a href="contact.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Contact Us</a>
     </div>
 </header>
@@ -98,30 +120,22 @@
             <div class="container mx-auto px-6 md:px-12 text-center">
                 <h2 class="text-3xl md:text-4xl font-semibold text-primary-dark mb-6">Our Impactful Projects</h2>
                 <p class="text-neutral-default text-lg mb-12 max-w-2xl mx-auto">We're proud to have partnered with diverse organizations to deliver meaningful results. Here’s a snapshot of our work.</p>
+                <?php if (!empty($featured_projects)): ?>
                 <div class="grid md:grid-cols-3 gap-8 mb-10">
-                    <!-- Project Card 1 -->
+                    <?php foreach ($featured_projects as $project): ?>
                     <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-left flex flex-col">
-                        <img src="https://via.placeholder.com/400x250/06b6d4/ffffff?text=Project+Alpha" alt="Project Alpha Image" class="w-full h-48 object-cover rounded-md mb-4">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Community Needs Assessment</h3>
-                        <p class="text-sm text-neutral-default flex-grow mb-4">Evaluated local needs to inform a new community development program for an international NGO.</p>
-                        <a href="projects.html#project-alpha" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md text-sm transition duration-300 self-start">Explore Project</a>
+                        <img src="<?php echo htmlspecialchars(empty($project['image_url']) ? 'https://via.placeholder.com/400x250/06b6d4/ffffff?text=Project+Image' : $project['image_url']); ?>"
+                             alt="<?php echo htmlspecialchars($project['title']); ?>" class="w-full h-48 object-cover rounded-md mb-4">
+                        <h3 class="text-xl font-semibold text-primary mb-2"><?php echo htmlspecialchars($project['title']); ?></h3>
+                        <p class="text-sm text-neutral-default flex-grow mb-4"><?php echo htmlspecialchars($project['description_snippet']); ?>...</p>
+                        <a href="projects.php#project-<?php echo $project['id']; ?>" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md text-sm transition duration-300 self-start">Explore Project</a>
                     </div>
-                    <!-- Project Card 2 -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-left flex flex-col">
-                        <img src="https://via.placeholder.com/400x250/06b6d4/ffffff?text=Project+Beta" alt="Project Beta Image" class="w-full h-48 object-cover rounded-md mb-4">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Educational Program M&E</h3>
-                        <p class="text-sm text-neutral-default flex-grow mb-4">Implemented a monitoring and evaluation framework for a youth literacy project.</p>
-                        <a href="projects.html#project-beta" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md text-sm transition duration-300 self-start">Explore Project</a>
-                    </div>
-                    <!-- Project Card 3 -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-left flex flex-col">
-                        <img src="https://via.placeholder.com/400x250/06b6d4/ffffff?text=Project+Gamma" alt="Project Gamma Image" class="w-full h-48 object-cover rounded-md mb-4">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Market Feasibility Study</h3>
-                        <p class="text-sm text-neutral-default flex-grow mb-4">Assessed market viability for a social enterprise aiming to launch sustainable products.</p>
-                        <a href="projects.html#project-gamma" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md text-sm transition duration-300 self-start">Explore Project</a>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
-                <a href="projects.html" class="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-md text-sm transition duration-300">View All Projects</a>
+                <a href="projects.php" class="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-md text-sm transition duration-300">View All Projects</a>
+                <?php else: ?>
+                    <p class="text-neutral-default text-center">No projects to display at the moment. Please check back soon!</p>
+                <?php endif; ?>
             </div>
         </section>
 
@@ -129,18 +143,24 @@
         <section id="testimonials-snippets" class="py-16 md:py-24 bg-neutral-light">
             <div class="container mx-auto px-6 md:px-12">
                 <h2 class="text-3xl md:text-4xl font-semibold text-primary-dark mb-12 text-center">What Our Clients Say</h2>
-                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <?php if (!empty($featured_testimonials)): ?>
+                <div class="grid md:grid-cols-<?php echo count($featured_testimonials) === 1 ? '1' : '2'; ?> gap-8 max-w-4xl mx-auto">
+                    <?php foreach ($featured_testimonials as $testimonial): ?>
                     <div class="bg-white p-8 rounded-xl shadow-lg">
-                        <p class="text-neutral-default italic mb-4 text-lg">"Greemheld's insights were invaluable for our program's success. Their rigorous approach and clear reporting helped us secure further funding."</p>
-                        <p class="font-semibold text-primary">- A. Client, NGO Director</p>
+                        <p class="text-neutral-default italic mb-4 text-lg">"<?php echo nl2br(htmlspecialchars($testimonial['quote'])); ?>"</p>
+                        <p class="font-semibold text-primary">- <?php echo htmlspecialchars($testimonial['client_name']); ?></p>
+                        <?php if (!empty($testimonial['client_title_company'])): ?>
+                        <p class="text-sm text-neutral-500"><?php echo htmlspecialchars($testimonial['client_title_company']); ?></p>
+                        <?php endif; ?>
                     </div>
-                    <div class="bg-white p-8 rounded-xl shadow-lg">
-                        <p class="text-neutral-default italic mb-4 text-lg">"The team at Greemheld is professional, responsive, and truly understands the nuances of social research. Highly recommended!"</p>
-                        <p class="font-semibold text-primary">- B. Partner, Development Agency</p>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
                 <div class="text-center mt-12">
-                    <a href="testimonials.html" class="text-accent hover:underline font-semibold text-lg">Read More Testimonials</a>
+                    <a href="testimonials.php" class="text-accent hover:underline font-semibold text-lg">Read More Testimonials</a>
+                </div>
+                <?php else: ?>
+                    <p class="text-neutral-default text-center">We are currently gathering feedback from our valued clients.</p>
+                <?php endif; ?>
                 </div>
             </div>
         </section>
@@ -173,10 +193,11 @@
         <div>
             <h3 class="text-xl font-semibold mb-4 text-white">Quick Links</h3>
             <ul class="space-y-2 text-sm">
-                <li><a href="index.html" class="hover:text-primary transition duration-300">Home</a></li>
+                <li><a href="index.php" class="hover:text-primary transition duration-300">Home</a></li>
                 <li><a href="about.html" class="hover:text-primary transition duration-300">About Us</a></li>
                 <li><a href="services.html" class="hover:text-primary transition duration-300">Services</a></li>
-                <li><a href="projects.html" class="hover:text-primary transition duration-300">Projects</a></li>
+                <li><a href="projects.php" class="hover:text-primary transition duration-300">Projects</a></li>
+                <li><a href="testimonials.php" class="hover:text-primary transition duration-300">Testimonials</a></li>
                 <li><a href="contact.html" class="hover:text-primary transition duration-300">Contact</a></li>
                 <li><a href="#" class="hover:text-primary transition duration-300">Privacy Policy</a></li> <!-- Placeholder -->
                 <li><a href="#" class="hover:text-primary transition duration-300">Terms of Service</a></li> <!-- Placeholder -->
