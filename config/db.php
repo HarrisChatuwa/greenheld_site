@@ -1,13 +1,14 @@
 <?php
 // Database Configuration
 define('DB_HOST', 'localhost'); // Replace with your database host (e.g., '127.0.0.1')
-define('DB_NAME', 'greemheld_db'); // Replace with your database name
+define('DB_NAME', 'greenheld'); // Replace with your database name
 define('DB_USER', 'root');       // Replace with your database username
-define('DB_PASS', '');           // Replace with your database password
+define('DB_PASS', '1234Pass*');           // Replace with your database password
+define('DB_PORT', '33061');           // Replace with your database password
 define('DB_CHARSET', 'utf8mb4');
 
 // Data Source Name (DSN)
-$dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
+$dsn = "mysql:host=" . DB_HOST . ";port=". DB_PORT . " dbname=" . DB_NAME;
 
 // PDO Options
 $options = [

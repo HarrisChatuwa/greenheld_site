@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error_message = 'Please enter both username and password.';
     } else {
         try {
-            $stmt = $pdo->prepare("SELECT id, username, password FROM users WHERE username = :username");
+            $stmt = $pdo->prepare("SELECT id, username, password FROM greenheld.users WHERE username = :username");
             $stmt->bindParam(':username', $username);
             $stmt->execute();
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -42,7 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         } catch (PDOException $e) {
             error_log("Login Error: " . $e->getMessage());
-            $error_message = 'An error occurred. Please try again later.';
+            $error_message = "Login Error: " . $e->getMessage();
+            // $error_message = 'An error occurred. Please try again later.';
         }
     }
 }

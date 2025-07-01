@@ -3,7 +3,7 @@ require_once '../config/db.php'; // Go up one level to find config
 
 // Fetch latest 3 projects
 try {
-    $stmt_projects = $pdo->query("SELECT id, title, LEFT(description, 120) AS description_snippet, image_url FROM projects ORDER BY created_at DESC LIMIT 3");
+    $stmt_projects = $pdo->query("SELECT id, title, LEFT(description, 120) AS description_snippet, image_url FROM greenheld.projects ORDER BY created_at DESC LIMIT 3");
     $featured_projects = $stmt_projects->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     error_log("Error fetching featured projects: " . $e->getMessage());
@@ -12,7 +12,7 @@ try {
 
 // Fetch latest 2 testimonials
 try {
-    $stmt_testimonials = $pdo->query("SELECT quote, client_name, client_title_company FROM testimonials ORDER BY created_at DESC LIMIT 2");
+    $stmt_testimonials = $pdo->query("SELECT quote, client_name, client_title_company FROM greenheld.testimonials ORDER BY created_at DESC LIMIT 2");
     $featured_testimonials = $stmt_testimonials->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     error_log("Error fetching featured testimonials: " . $e->getMessage());

@@ -3,7 +3,7 @@ require_once '../config/db.php'; // Go up one level to find config
 
 // Fetch all testimonials
 try {
-    $stmt = $pdo->query("SELECT id, quote, client_name, client_title_company, client_photo_url FROM testimonials ORDER BY created_at DESC");
+    $stmt = $pdo->query("SELECT id, quote, client_name, client_title_company, client_photo_url FROM greenheld.testimonials ORDER BY created_at DESC");
     $testimonials = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     error_log("Error fetching testimonials for testimonials page: " . $e->getMessage());

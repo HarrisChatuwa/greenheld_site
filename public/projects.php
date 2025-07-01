@@ -3,7 +3,7 @@ require_once '../config/db.php'; // Go up one level to find config
 
 // Fetch all projects
 try {
-    $stmt = $pdo->query("SELECT id, title, description, image_url, outcome FROM projects ORDER BY created_at DESC");
+    $stmt = $pdo->query("SELECT id, title, description, image_url, outcome FROM greenheld.projects ORDER BY created_at DESC");
     $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     error_log("Error fetching projects for projects page: " . $e->getMessage());
