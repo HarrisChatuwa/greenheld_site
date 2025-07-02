@@ -26,7 +26,7 @@ unset($_SESSION['success_message'], $_SESSION['error_message']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars($page_title); ?> - Greemheld Admin</title>
+    <title><?php echo htmlspecialchars($page_title); ?> - greenheld Admin</title>
     <link href="../public/css/style.css" rel="stylesheet">
     <style>
         .admin-nav a { @apply block px-4 py-2 text-neutral-700 hover:bg-primary-light hover:text-primary-dark rounded-md transition-colors; }
@@ -41,7 +41,7 @@ unset($_SESSION['success_message'], $_SESSION['error_message']);
         <!-- Sidebar -->
         <aside class="w-64 bg-white shadow-lg p-6 space-y-6 flex flex-col">
             <div class="text-center mb-8">
-                <a href="index.php" class="text-2xl font-bold text-primary">Greemheld Admin</a>
+                <a href="index.php" class="text-2xl font-bold text-primary">greenheld Admin</a>
             </div>
             <nav class="admin-nav space-y-2">
                 <a href="index.php">Dashboard</a>

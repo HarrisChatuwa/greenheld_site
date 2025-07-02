@@ -1,12 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./public/**/*.{html,js}"],
+    content: ["./public/**/*.{html,js,php}"],
   theme: {
     extend: {
       colors: {
         'primary': {
           light: '#67e8f9', // Lighter cyan
-          DEFAULT: '#06b6d4', // Cyan 600
+          DEFAULT: '#315039', // Cyan 600
           dark: '#0e7490',  // Darker cyan
         },
         'secondary': {

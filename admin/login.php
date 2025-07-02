@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login - Greemheld</title>
+    <title>Admin Login - greenheld</title>
     <link href="../public/css/style.css" rel="stylesheet"> <!-- Link to Tailwind output CSS -->
     <style>
         body {
@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body class="font-sans">
     <div class="login-container bg-white p-8 md:p-10 rounded-xl shadow-2xl">
         <div class="text-center mb-8">
-            <h1 class="text-3xl font-bold text-primary">Greemheld Admin</h1>
+            <h1 class="text-3xl font-bold text-primary">greenheld Admin</h1>
             <p class="text-neutral-default">Please sign in to continue</p>
         </div>
 
@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </form>
         <p class="text-center text-sm text-neutral-500 mt-8">
-            &copy; <?php echo date('Y'); ?> Greemheld Social Research and Consulting
+            &copy; <?php echo date('Y'); ?> greenheld Social Research and Consulting
         </p>
     </div>
 </body>

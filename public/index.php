@@ -25,14 +25,14 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greemheld Social Research and Consulting - Home</title>
+    <title>greenheld Social Research and Consulting - Home</title>
     <link href="css/style.css" rel="stylesheet">
-    <meta name="description" content="Greemheld Social Research and Consulting offers expert social research services.">
+    <meta name="description" content="greenheld Social Research and Consulting offers expert social research services.">
 </head>
 <body class="bg-neutral-light font-sans text-neutral-dark">
 <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="index.php" class="text-2xl font-bold text-primary">Greemheld</a>
+        <a href="index.php" class="text-2xl font-bold text-primary">Greenheld</a>
         <nav class="hidden md:flex space-x-1 items-center">
             <a href="index.php" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Home</a>
             <a href="about.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">About</a>
@@ -74,9 +74,9 @@ try {
         <!-- Brief Introduction/About Section -->
         <section id="intro" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-6 md:px-12 text-center">
-                <h2 class="text-3xl md:text-4xl font-semibold text-primary-dark mb-6">Welcome to Greemheld</h2>
+                <h2 class="text-3xl md:text-4xl font-semibold text-primary-dark mb-6">Welcome to Greenheld</h2>
                 <p class="text-neutral-default text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
-                    Greemheld Social Research and Consulting is a leading firm dedicated to providing comprehensive research, monitoring, and evaluation services. We empower NGOs, government agencies, and private sector organizations with data-driven insights to achieve their social impact goals.
+                    greenheld Social Research and Consulting is a leading firm dedicated to providing comprehensive research, monitoring, and evaluation services. We empower NGOs, government agencies, and private sector organizations with data-driven insights to achieve their social impact goals.
                 </p>
                 <a href="about.html" class="text-accent hover:underline font-semibold text-lg">Learn More About Us</a>
             </div>
@@ -169,7 +169,7 @@ try {
         <section id="secondary-cta" class="py-16 md:py-24 bg-primary text-white">
             <div class="container mx-auto px-6 md:px-12 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Drive Change?</h2>
-                <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto">Let's discuss how Greemheld can assist you in achieving your research and consulting objectives. Contact us today for a consultation.</p>
+                <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto">Let's discuss how greenheld can assist you in achieving your research and consulting objectives. Contact us today for a consultation.</p>
                 <a href="contact.html" class="bg-accent hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">Contact Us Today</a>
             </div>
         </section>
@@ -178,13 +178,13 @@ try {
 <footer class="bg-neutral-dark text-neutral-light py-12 px-4">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
         <div>
-            <h3 class="text-xl font-semibold mb-4 text-white">Greemheld</h3>
+            <h3 class="text-xl font-semibold mb-4 text-white">greenheld</h3>
             <p class="text-sm">
                 Placeholder Street Name, City, Postal Code<br>
                 Country
             </p>
             <p class="text-sm mt-2">
-                Email: <a href="mailto:info@greemheld.com" class="hover:text-primary transition duration-300">info@greemheld.com</a>
+                Email: <a href="mailto:info@greenheld.com" class="hover:text-primary transition duration-300">info@greenheld.com</a>
             </p>
             <p class="text-sm">
                 Phone: <a href="tel:+1234567890" class="hover:text-primary transition duration-300">+1 (234) 567-890</a>
@@ -214,7 +214,7 @@ try {
         </div>
     </div>
     <div class="text-center text-sm mt-10 border-t border-neutral-700 pt-8">
-        <p>&copy; <span id="currentYear"></span> Greemheld Social Research and Consulting. All Rights Reserved.</p>
+        <p>&copy; <span id="currentYear"></span> greenheld Social Research and Consulting. All Rights Reserved.</p>
     </div>
 </footer>
 

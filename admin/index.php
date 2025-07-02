@@ -10,7 +10,7 @@ $admin_username = isset($_SESSION['admin_username']) ? htmlspecialchars($_SESSIO
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - Greemheld</title>
+    <title>Admin Dashboard - greenheld</title>
     <link href="../public/css/style.css" rel="stylesheet"> <!-- Link to Tailwind output CSS -->
     <style>
         /* Basic admin layout styles */
@@ -27,7 +27,7 @@ $admin_username = isset($_SESSION['admin_username']) ? htmlspecialchars($_SESSIO
         <!-- Sidebar -->
         <aside class="w-64 bg-white shadow-lg p-6 space-y-6">
             <div class="text-center mb-8">
-                <a href="index.php" class="text-2xl font-bold text-primary">Greemheld Admin</a>
+                <a href="index.php" class="text-2xl font-bold text-primary">greenheld Admin</a>
             </div>
             <nav class="admin-nav space-y-2">
                 <a href="index.php" class="active">Dashboard</a>

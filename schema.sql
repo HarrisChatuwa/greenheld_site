@@ -1,4 +1,4 @@
--- Database: greemheld_db (Example name, user can change)
+-- Database: greenheld_db (Example name, user can change)
 
 --
 -- Table structure for table `users`

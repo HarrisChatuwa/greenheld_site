@@ -16,14 +16,14 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Client Testimonials - Greemheld Social Research and Consulting</title>
+    <title>Client Testimonials - greenheld Social Research and Consulting</title>
     <link href="css/style.css" rel="stylesheet">
-    <meta name="description" content="Read what our clients say about Greemheld Social Research and Consulting.">
+    <meta name="description" content="Read what our clients say about greenheld Social Research and Consulting.">
 </head>
 <body class="bg-neutral-light font-sans text-neutral-dark">
 <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="index.php" class="text-2xl font-bold text-primary">Greemheld</a>
+        <a href="index.php" class="text-2xl font-bold text-primary">greenheld</a>
         <nav class="hidden md:flex space-x-1 items-center">
             <a href="index.php" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Home</a>
             <a href="about.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">About</a>
@@ -96,13 +96,13 @@ try {
 <footer class="bg-neutral-dark text-neutral-light py-12 px-4">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
         <div>
-            <h3 class="text-xl font-semibold mb-4 text-white">Greemheld</h3>
+            <h3 class="text-xl font-semibold mb-4 text-white">greenheld</h3>
             <p class="text-sm">
                 Placeholder Street Name, City, Postal Code<br>
                 Country
             </p>
             <p class="text-sm mt-2">
-                Email: <a href="mailto:info@greemheld.com" class="hover:text-primary transition duration-300">info@greemheld.com</a>
+                Email: <a href="mailto:info@greenheld.com" class="hover:text-primary transition duration-300">info@greenheld.com</a>
             </p>
             <p class="text-sm">
                 Phone: <a href="tel:+1234567890" class="hover:text-primary transition duration-300">+1 (234) 567-890</a>
@@ -132,7 +132,7 @@ try {
         </div>
     </div>
     <div class="text-center text-sm mt-10 border-t border-neutral-700 pt-8">
-        <p>&copy; <span id="currentYear"></span> Greemheld Social Research and Consulting. All Rights Reserved.</p>
+        <p>&copy; <span id="currentYear"></span> greenheld Social Research and Consulting. All Rights Reserved.</p>
     </div>
 </footer>
 

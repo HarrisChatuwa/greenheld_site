@@ -1,7 +1,7 @@
 {
-  "name": "greemheld-website",
+  "name": "greenheld-website",
   "version": "1.0.0",
-  "description": "Greemheld Social Research and Consulting Website",
+  "description": "greenheld Social Research and Consulting Website",
   "main": "index.js",
   "scripts": {
     "build:css": "tailwindcss -i ./src/input.css -o ./public/css/style.css --watch",
