@@ -6,7 +6,7 @@ $page_title = "Manage Testimonials";
 
 // Fetch all testimonials
 try {
-    $stmt = $pdo->query("SELECT id, LEFT(quote, 150) AS quote_snippet, client_name, client_title_company, client_photo_url, created_at FROM testimonials ORDER BY created_at DESC");
+    $stmt = $pdo->query("SELECT id, LEFT(quote, 150) AS quote_snippet, client_name, client_title_company, client_photo_url, created_at FROM greenheld.testimonials ORDER BY created_at DESC");
     $testimonials = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     error_log("Error fetching testimonials: " . $e->getMessage());
@@ -27,37 +27,36 @@ unset($_SESSION['success_message'], $_SESSION['error_message']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($page_title); ?> - greenheld Admin</title>
     <link href="../public/css/style.css" rel="stylesheet">
-    <style>
-        .admin-nav a { @apply block px-4 py-2 text-neutral-700 hover:bg-primary-light hover:text-primary-dark rounded-md transition-colors; }
-        .admin-nav a.active { @apply bg-primary text-white; }
-        th, td { @apply px-4 py-2 border border-neutral-300 text-left align-top; } /* align-top for better readability */
-        table { @apply w-full border-collapse; }
-        .thumbnail { @apply w-20 h-20 object-cover rounded-full; } /* Rounded for client photos */
-    </style>
 </head>
-<body class="bg-neutral-light font-sans">
-    <div class="flex h-screen bg-neutral-100">
+<body class="bg-gray-100 font-sans antialiased">
+    <div class="flex h-screen">
         <!-- Sidebar -->
-        <aside class="w-64 bg-white shadow-lg p-6 space-y-6 flex flex-col">
-            <div class="text-center mb-8">
-                <a href="index.php" class="text-2xl font-bold text-primary">greenheld Admin</a>
+        <aside class="w-64 bg-gray-800 text-white flex flex-col">
+            <div class="p-6 text-center border-b border-gray-700">
+                <a href="index.php" class="text-2xl font-bold text-white">greenheld Admin</a>
             </div>
-            <nav class="admin-nav space-y-2">
-                <a href="index.php">Dashboard</a>
-                <a href="projects_admin.php">Manage Projects</a>
-                <a href="testimonials_admin.php" class="active">Manage Testimonials</a>
+            <nav class="flex-1 px-4 py-6 space-y-2">
+                <a href="index.php" class="block px-4 py-2 rounded-md text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
+                    Dashboard
+                </a>
+                <a href="projects_admin.php" class="block px-4 py-2 rounded-md text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
+                    Manage Projects
+                </a>
+                <a href="testimonials_admin.php" class="block px-4 py-2 rounded-md bg-gray-900 font-semibold text-white">
+                    Manage Testimonials
+                </a>
             </nav>
-            <div class="mt-auto pt-6 border-t border-neutral-200">
-                 <a href="logout.php" class="block w-full text-center px-4 py-2 text-red-600 hover:bg-red-100 hover:text-red-700 rounded-md transition-colors">
+            <div class="p-4 border-t border-gray-700">
+                 <a href="logout.php" class="block w-full text-center px-4 py-2 text-red-300 hover:bg-red-700 hover:text-white rounded-md transition-colors duration-200">
                     Logout
                 </a>
             </div>
         </aside>
 
         <!-- Main Content -->
-        <main class="flex-1 p-8 md:p-10 overflow-y-auto">
-            <header class="mb-10">
-                <h1 class="text-3xl md:text-4xl font-bold text-primary-dark"><?php echo htmlspecialchars($page_title); ?></h1>
+        <main class="flex-1 p-8 overflow-y-auto bg-gray-100">
+            <header class="mb-8">
+                <h1 class="text-4xl font-bold text-gray-800"><?php echo htmlspecialchars($page_title); ?></h1>
             </header>
 
             <?php if ($success_message): ?>
@@ -77,40 +76,40 @@ unset($_SESSION['success_message'], $_SESSION['error_message']);
             <?php endif; ?>
 
             <!-- Add New Testimonial Form -->
-            <section id="add-testimonial-form" class="mb-12 bg-white p-6 md:p-8 rounded-xl shadow-lg">
-                <h2 class="text-2xl font-semibold text-primary-dark mb-6">Add New Testimonial</h2>
-                <form action="process_testimonial.php" method="POST" enctype="multipart/form-data">
+            <section id="add-testimonial-form" class="mb-8 bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Add New Testimonial</h2>
+                <form action="process_testimonial.php" method="POST" enctype="multipart/form-data" class="space-y-4">
                     <input type="hidden" name="action" value="add">
 
-                    <div class="mb-4">
-                        <label for="client_name" class="block text-neutral-700 font-medium mb-1">Client Name <span class="text-red-500">*</span></label>
-                        <input type="text" id="client_name" name="client_name" required class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary">
-                    </div>
-
-                    <div class="mb-4">
-                        <label for="client_title_company" class="block text-neutral-700 font-medium mb-1">Client Title/Company</label>
-                        <input type="text" id="client_title_company" name="client_title_company" class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary">
-                    </div>
-
-                    <div class="mb-4">
-                        <label for="quote" class="block text-neutral-700 font-medium mb-1">Quote <span class="text-red-500">*</span></label>
-                        <textarea id="quote" name="quote" rows="5" required class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"></textarea>
-                    </div>
-
-                    <div class="mb-6">
-                        <label for="client_photo" class="block text-neutral-700 font-medium mb-1">Client Photo/Logo (Optional)</label>
-                        <input type="file" id="client_photo" name="client_photo" accept="image/jpeg, image/png, image/gif" class="w-full text-sm text-neutral-500
-                            file:mr-4 file:py-2 file:px-4
-                            file:rounded-lg file:border-0
-                            file:text-sm file:font-semibold
-                            file:bg-primary-light file:text-primary-dark
-                            hover:file:bg-primary-dark hover:file:text-white
-                        ">
-                        <p class="text-xs text-neutral-500 mt-1">Accepted formats: JPG, PNG, GIF. Max size: 1MB (example).</p>
+                    <div>
+                        <label for="client_name" class="block text-sm font-medium text-gray-700">Client Name <span class="text-red-500">*</span></label>
+                        <input type="text" id="client_name" name="client_name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm">
                     </div>
 
                     <div>
-                        <button type="submit" class="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-6 rounded-lg transition duration-300">
+                        <label for="client_title_company" class="block text-sm font-medium text-gray-700">Client Title/Company</label>
+                        <input type="text" id="client_title_company" name="client_title_company" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm">
+                    </div>
+
+                    <div>
+                        <label for="quote" class="block text-sm font-medium text-gray-700">Quote <span class="text-red-500">*</span></label>
+                        <textarea id="quote" name="quote" rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"></textarea>
+                    </div>
+
+                    <div>
+                        <label for="client_photo" class="block text-sm font-medium text-gray-700">Client Photo/Logo (Optional)</label>
+                        <input type="file" id="client_photo" name="client_photo" accept="image/jpeg, image/png, image/gif" class="mt-1 block w-full text-sm text-gray-500
+                            file:mr-4 file:py-2 file:px-4
+                            file:rounded-md file:border-0
+                            file:text-sm file:font-semibold
+                            file:bg-primary file:text-white
+                            hover:file:bg-primary-dark
+                        ">
+                        <p class="mt-1 text-xs text-gray-500">Accepted formats: JPG, PNG, GIF. Max size: 1MB (example).</p>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
                             Add Testimonial
                         </button>
                     </div>
@@ -118,43 +117,43 @@ unset($_SESSION['success_message'], $_SESSION['error_message']);
             </section>
 
             <!-- Display Existing Testimonials -->
-            <section id="display-testimonials" class="bg-white p-6 md:p-8 rounded-xl shadow-lg">
-                <h2 class="text-2xl font-semibold text-primary-dark mb-6">Existing Testimonials</h2>
+            <section id="display-testimonials" class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Existing Testimonials</h2>
                 <?php if (empty($testimonials) && !isset($fetch_error)): ?>
-                    <p class="text-neutral-600">No testimonials found. Add one using the form above.</p>
+                    <p class="text-gray-600">No testimonials found. Add one using the form above.</p>
                 <?php elseif (!empty($testimonials)): ?>
                     <div class="overflow-x-auto">
-                        <table>
-                            <thead>
-                                <tr class="bg-neutral-100">
-                                    <th>ID</th>
-                                    <th>Photo</th>
-                                    <th>Client Name</th>
-                                    <th>Title/Company</th>
-                                    <th>Quote Snippet</th>
-                                    <th>Created At</th>
-                                    <th>Actions</th>
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Photo</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Client Name</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title/Company</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quote Snippet</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Created At</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="bg-white divide-y divide-gray-200">
                                 <?php foreach ($testimonials as $testimonial): ?>
                                 <tr>
-                                    <td><?php echo htmlspecialchars($testimonial['id']); ?></td>
-                                    <td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><?php echo htmlspecialchars($testimonial['id']); ?></td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
                                         <?php if (!empty($testimonial['client_photo_url'])): ?>
-                                            <img src="../<?php echo htmlspecialchars($testimonial['client_photo_url']); ?>" alt="<?php echo htmlspecialchars($testimonial['client_name']); ?>" class="thumbnail">
+                                            <img src="../<?php echo htmlspecialchars($testimonial['client_photo_url']); ?>" alt="<?php echo htmlspecialchars($testimonial['client_name']); ?>" class="h-16 w-16 object-cover rounded-full">
                                         <?php else: ?>
                                             N/A
                                         <?php endif; ?>
                                     </td>
-                                    <td><?php echo htmlspecialchars($testimonial['client_name']); ?></td>
-                                    <td><?php echo htmlspecialchars($testimonial['client_title_company'] ?? ''); ?></td>
-                                    <td><?php echo htmlspecialchars($testimonial['quote_snippet']); ?>...</td>
-                                    <td><?php echo htmlspecialchars(date('M j, Y H:i', strtotime($testimonial['created_at']))); ?></td>
-                                    <td class="space-x-2 whitespace-nowrap">
-                                        <a href="edit_testimonial.php?id=<?php echo $testimonial['id']; ?>" class="text-blue-600 hover:text-blue-800 hover:underline">Edit</a>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><?php echo htmlspecialchars($testimonial['client_name']); ?></td>
+                                    <td class="px-6 py-4 text-sm text-gray-500"><?php echo htmlspecialchars($testimonial['client_title_company'] ?? ''); ?></td>
+                                    <td class="px-6 py-4 text-sm text-gray-500"><?php echo htmlspecialchars($testimonial['quote_snippet']); ?>...</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><?php echo htmlspecialchars(date('M j, Y H:i', strtotime($testimonial['created_at']))); ?></td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <a href="edit_testimonial.php?id=<?php echo $testimonial['id']; ?>" class="text-primary hover:text-primary-dark mr-3">Edit</a>
                                         <a href="process_testimonial.php?action=delete&id=<?php echo $testimonial['id']; ?>"
-                                           class="text-red-600 hover:text-red-800 hover:underline"
+                                           class="text-red-600 hover:text-red-900"
                                            onclick="return confirm('Are you sure you want to delete this testimonial?');">Delete</a>
                                     </td>
                                 </tr>

@@ -48,30 +48,38 @@ unset($_SESSION['error_message']); // Clear it after displaying
         .current-image-preview { @apply max-w-xs h-auto rounded-md shadow-md mb-4; }
     </style>
 </head>
-<body class="bg-neutral-light font-sans">
-    <div class="flex h-screen bg-neutral-100">
+<body class="bg-gray-100 font-sans antialiased">
+    <div class="flex h-screen">
         <!-- Sidebar -->
-        <aside class="w-64 bg-white shadow-lg p-6 space-y-6 flex flex-col">
-            <div class="text-center mb-8">
-                <a href="index.php" class="text-2xl font-bold text-primary">greenheld Admin</a>
+        <aside class="w-64 bg-gray-800 text-white flex flex-col">
+            <div class="p-6 text-center border-b border-gray-700">
+                <a href="index.php" class="text-2xl font-bold text-white">greenheld Admin</a>
             </div>
-            <nav class="admin-nav space-y-2">
-                <a href="index.php">Dashboard</a>
-                <a href="projects_admin.php" class="active">Manage Projects</a>
-                <a href="testimonials_admin.php">Manage Testimonials</a>
+            <nav class="flex-1 px-4 py-6 space-y-2">
+                <a href="index.php" class="block px-4 py-2 rounded-md text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
+                    Dashboard
+                </a>
+                <a href="projects_admin.php" class="block px-4 py-2 rounded-md bg-gray-900 font-semibold text-white">
+                    Manage Projects
+                </a>
+                <a href="testimonials_admin.php" class="block px-4 py-2 rounded-md text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
+                    Manage Testimonials
+                </a>
             </nav>
-            <div class="mt-auto pt-6 border-t border-neutral-200">
-                 <a href="logout.php" class="block w-full text-center px-4 py-2 text-red-600 hover:bg-red-100 hover:text-red-700 rounded-md transition-colors">
+            <div class="p-4 border-t border-gray-700">
+                 <a href="logout.php" class="block w-full text-center px-4 py-2 text-red-300 hover:bg-red-700 hover:text-white rounded-md transition-colors duration-200">
                     Logout
                 </a>
             </div>
         </aside>
 
         <!-- Main Content -->
-        <main class="flex-1 p-8 md:p-10 overflow-y-auto">
+        <main class="flex-1 p-8 overflow-y-auto bg-gray-100">
             <header class="mb-6 flex justify-between items-center">
-                <h1 class="text-3xl md:text-4xl font-bold text-primary-dark"><?php echo htmlspecialchars($page_title); ?></h1>
-                <a href="projects_admin.php" class="text-primary hover:underline">&laquo; Back to Projects</a>
+                <h1 class="text-4xl font-bold text-gray-800"><?php echo htmlspecialchars($page_title); ?></h1>
+                <a href="projects_admin.php" class="text-primary hover:underline text-sm">
+                    <span aria-hidden="true">&laquo;</span> Back to Projects
+                </a>
             </header>
 
             <?php if ($form_error_message): ?>
@@ -80,53 +88,53 @@ unset($_SESSION['error_message']); // Clear it after displaying
                 </div>
             <?php endif; ?>
 
-            <section class="bg-white p-6 md:p-8 rounded-xl shadow-lg">
-                <form action="process_project.php" method="POST" enctype="multipart/form-data">
+            <section class="bg-white p-6 rounded-lg shadow-md">
+                <form action="process_project.php" method="POST" enctype="multipart/form-data" class="space-y-4">
                     <input type="hidden" name="action" value="edit">
                     <input type="hidden" name="project_id" value="<?php echo htmlspecialchars($project['id']); ?>">
 
-                    <div class="mb-4">
-                        <label for="title" class="block text-neutral-700 font-medium mb-1">Title <span class="text-red-500">*</span></label>
+                    <div>
+                        <label for="title" class="block text-sm font-medium text-gray-700">Title <span class="text-red-500">*</span></label>
                         <input type="text" id="title" name="title" required
                                value="<?php echo htmlspecialchars($project['title']); ?>"
-                               class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary">
-                    </div>
-
-                    <div class="mb-4">
-                        <label for="description" class="block text-neutral-700 font-medium mb-1">Description <span class="text-red-500">*</span></label>
-                        <textarea id="description" name="description" rows="8" required
-                                  class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"><?php echo htmlspecialchars($project['description']); ?></textarea>
-                    </div>
-
-                    <div class="mb-4">
-                        <label for="outcome" class="block text-neutral-700 font-medium mb-1">Key Outcome/Impact</label>
-                        <textarea id="outcome" name="outcome" rows="4"
-                                  class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"><?php echo htmlspecialchars($project['outcome'] ?? ''); ?></textarea>
-                    </div>
-
-                    <div class="mb-6">
-                        <label for="image" class="block text-neutral-700 font-medium mb-1">Project Image</label>
-                        <?php if (!empty($project['image_url'])): ?>
-                            <div class="my-2">
-                                <p class="text-sm text-neutral-600 mb-1">Current Image:</p>
-                                <img src="../<?php echo htmlspecialchars($project['image_url']); ?>" alt="Current project image" class="current-image-preview">
-                            </div>
-                        <?php endif; ?>
-                        <input type="file" id="image" name="image" accept="image/jpeg, image/png, image/gif" class="w-full text-sm text-neutral-500
-                            file:mr-4 file:py-2 file:px-4
-                            file:rounded-lg file:border-0
-                            file:text-sm file:font-semibold
-                            file:bg-primary-light file:text-primary-dark
-                            hover:file:bg-primary-dark hover:file:text-white
-                        ">
-                        <p class="text-xs text-neutral-500 mt-1">Leave empty to keep the current image. Accepted formats: JPG, PNG, GIF. Max size: 2MB (example).</p>
+                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm">
                     </div>
 
                     <div>
-                        <button type="submit" class="bg-accent hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-lg transition duration-300">
+                        <label for="description" class="block text-sm font-medium text-gray-700">Description <span class="text-red-500">*</span></label>
+                        <textarea id="description" name="description" rows="8" required
+                                  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"><?php echo htmlspecialchars($project['description']); ?></textarea>
+                    </div>
+
+                    <div>
+                        <label for="outcome" class="block text-sm font-medium text-gray-700">Key Outcome/Impact</label>
+                        <textarea id="outcome" name="outcome" rows="4"
+                                  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"><?php echo htmlspecialchars($project['outcome'] ?? ''); ?></textarea>
+                    </div>
+
+                    <div>
+                        <label for="image" class="block text-sm font-medium text-gray-700">Project Image</label>
+                        <?php if (!empty($project['image_url'])): ?>
+                            <div class="my-2">
+                                <p class="text-sm text-gray-600 mb-1">Current Image:</p>
+                                <img src="../<?php echo htmlspecialchars($project['image_url']); ?>" alt="Current project image" class="max-w-xs h-auto rounded-md shadow-md mb-4">
+                            </div>
+                        <?php endif; ?>
+                        <input type="file" id="image" name="image" accept="image/jpeg, image/png, image/gif" class="mt-1 block w-full text-sm text-gray-500
+                            file:mr-4 file:py-2 file:px-4
+                            file:rounded-md file:border-0
+                            file:text-sm file:font-semibold
+                            file:bg-primary file:text-white
+                            hover:file:bg-primary-dark
+                        ">
+                        <p class="mt-1 text-xs text-gray-500">Leave empty to keep the current image. Accepted formats: JPG, PNG, GIF. Max size: 2MB (example).</p>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
                             Update Project
                         </button>
-                        <a href="projects_admin.php" class="text-neutral-600 hover:text-neutral-800 ml-4">Cancel</a>
+                        <a href="projects_admin.php" class="text-gray-600 hover:text-gray-900 text-sm">Cancel</a>
                     </div>
                 </form>
             </section>
