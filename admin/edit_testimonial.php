@@ -13,7 +13,7 @@ if ($testimonial_id <= 0) {
 
 // Fetch testimonial details
 try {
-    $stmt = $pdo->prepare("SELECT * FROM testimonials WHERE id = :id");
+    $stmt = $pdo->prepare("SELECT * FROM greenheld.testimonials WHERE id = :id");
     $stmt->bindParam(':id', $testimonial_id, PDO::PARAM_INT);
     $stmt->execute();
     $testimonial = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -39,28 +39,25 @@ unset($_SESSION['error_message']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($page_title); ?> - greenheld Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="../public/css/style.css" rel="stylesheet">
-    <style>
-        .admin-nav a { @apply block px-4 py-2 text-neutral-700 hover:bg-primary-light hover:text-primary-dark rounded-md transition-colors; }
-        .admin-nav a.active { @apply bg-primary text-white; }
-        .current-image-preview { @apply max-w-[150px] h-auto rounded-full shadow-md mb-4; } /* Adjusted for client photos */
-    </style>
+    <link href="assets/css/dashboard.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 font-sans antialiased">
     <div class="flex h-screen">
         <!-- Sidebar -->
-        <aside class="w-64 bg-gray-800 text-white flex flex-col">
+        <aside class="w-64 sidebar flex flex-col">
             <div class="p-6 text-center border-b border-gray-700">
                 <a href="index.php" class="text-2xl font-bold text-white">greenheld Admin</a>
             </div>
             <nav class="flex-1 px-4 py-6 space-y-2">
-                <a href="index.php" class="block px-4 py-2 rounded-md text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
+                <a href="index.php" class="block px-4 py-2 rounded-md">
                     Dashboard
                 </a>
-                <a href="projects_admin.php" class="block px-4 py-2 rounded-md text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
+                <a href="projects_admin.php" class="block px-4 py-2 rounded-md">
                     Manage Projects
                 </a>
-                <a href="testimonials_admin.php" class="block px-4 py-2 rounded-md bg-gray-900 font-semibold text-white">
+                <a href="testimonials_admin.php" class="block px-4 py-2 rounded-md active">
                     Manage Testimonials
                 </a>
             </nav>
@@ -72,7 +69,7 @@ unset($_SESSION['error_message']);
         </aside>
 
         <!-- Main Content -->
-        <main class="flex-1 p-8 overflow-y-auto bg-gray-100">
+        <main class="flex-1 p-8 overflow-y-auto main-content">
             <header class="mb-6 flex justify-between items-center">
                 <h1 class="text-4xl font-bold text-gray-800"><?php echo htmlspecialchars($page_title); ?></h1>
                 <a href="testimonials_admin.php" class="text-primary hover:underline text-sm">
@@ -95,20 +92,20 @@ unset($_SESSION['error_message']);
                         <label for="client_name" class="block text-sm font-medium text-gray-700">Client Name <span class="text-red-500">*</span></label>
                         <input type="text" id="client_name" name="client_name" required
                                value="<?php echo htmlspecialchars($testimonial['client_name']); ?>"
-                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm">
+                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm form-input">
                     </div>
 
                     <div>
                         <label for="client_title_company" class="block text-sm font-medium text-gray-700">Client Title/Company</label>
                         <input type="text" id="client_title_company" name="client_title_company"
                                value="<?php echo htmlspecialchars($testimonial['client_title_company'] ?? ''); ?>"
-                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm">
+                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm form-input">
                     </div>
 
                     <div>
                         <label for="quote" class="block text-sm font-medium text-gray-700">Quote <span class="text-red-500">*</span></label>
                         <textarea id="quote" name="quote" rows="6" required
-                                  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"><?php echo htmlspecialchars($testimonial['quote']); ?></textarea>
+                                  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm form-input"><?php echo htmlspecialchars($testimonial['quote']); ?></textarea>
                     </div>
 
                     <div>
@@ -130,7 +127,7 @@ unset($_SESSION['error_message']);
                     </div>
 
                     <div class="flex items-center space-x-4">
-                        <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                        <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary btn-primary">
                             Update Testimonial
                         </button>
                         <a href="testimonials_admin.php" class="text-gray-600 hover:text-gray-900 text-sm">Cancel</a>
