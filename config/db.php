@@ -1,14 +1,14 @@
 <?php
 // Database Configuration
 define('DB_HOST', 'localhost'); // Replace with your database host (e.g., '127.0.0.1')
-define('DB_NAME', 'greenheld'); // Replace with your database name
-define('DB_USER', 'root');       // Replace with your database username
-define('DB_PASS', '1234Pass*');           // Replace with your database password
+define('DB_NAME', 'greefrot_greenheld'); // Replace with your database name
+define('DB_USER', 'greefrot_hchatuwa');       // Replace with your database username
+define('DB_PASS', 'jf@J9Ua!KLgI');           // Replace with your database password
 define('DB_PORT', '33061');           // Replace with your database password
 define('DB_CHARSET', 'utf8mb4');
 
 // Data Source Name (DSN)
-$dsn = "mysql:host=" . DB_HOST . ";port=". DB_PORT . " dbname=" . DB_NAME;
+$dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . " dbname=" . DB_NAME;
 
 // PDO Options
 $options = [
@@ -33,4 +33,3 @@ try {
 // 1. Store database credentials outside of the web root (e.g., in environment variables or a config file in a non-accessible directory).
 // 2. Restrict file permissions for this config file.
 // 3. Implement more robust error handling that doesn't expose detailed error messages to the end-user.
-?>
