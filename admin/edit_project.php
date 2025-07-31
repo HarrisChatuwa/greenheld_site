@@ -13,7 +13,7 @@ if ($project_id <= 0) {
 
 // Fetch project details
 try {
-    $stmt = $pdo->prepare("SELECT * FROM greenheld.projects WHERE id = :id");
+    $stmt = $pdo->prepare("SELECT * FROM greefrot_greenheld.projects WHERE id = :id");
     $stmt->bindParam(':id', $project_id, PDO::PARAM_INT);
     $stmt->execute();
     $project = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -37,6 +37,7 @@ unset($_SESSION['error_message']); // Clear it after displaying
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,6 +46,7 @@ unset($_SESSION['error_message']); // Clear it after displaying
     <link href="../public/css/style.css" rel="stylesheet">
     <link href="assets/css/dashboard.css" rel="stylesheet">
 </head>
+
 <body class="bg-gray-100 font-sans antialiased">
     <div class="flex h-screen">
         <!-- Sidebar -->
@@ -64,7 +66,7 @@ unset($_SESSION['error_message']); // Clear it after displaying
                 </a>
             </nav>
             <div class="p-4 border-t border-gray-700">
-                 <a href="logout.php" class="block w-full text-center px-4 py-2 text-red-300 hover:bg-red-700 hover:text-white rounded-md transition-colors duration-200">
+                <a href="logout.php" class="block w-full text-center px-4 py-2 text-red-300 hover:bg-red-700 hover:text-white rounded-md transition-colors duration-200">
                     Logout
                 </a>
             </div>
@@ -80,7 +82,7 @@ unset($_SESSION['error_message']); // Clear it after displaying
             </header>
 
             <?php if ($form_error_message): ?>
-                 <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-md" role="alert">
+                <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-md" role="alert">
                     <p><?php echo htmlspecialchars($form_error_message); ?></p>
                 </div>
             <?php endif; ?>
@@ -93,20 +95,20 @@ unset($_SESSION['error_message']); // Clear it after displaying
                     <div>
                         <label for="title" class="block text-sm font-medium text-gray-700">Title <span class="text-red-500">*</span></label>
                         <input type="text" id="title" name="title" required
-                               value="<?php echo htmlspecialchars($project['title']); ?>"
-                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm form-input">
+                            value="<?php echo htmlspecialchars($project['title']); ?>"
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm form-input">
                     </div>
 
                     <div>
                         <label for="description" class="block text-sm font-medium text-gray-700">Description <span class="text-red-500">*</span></label>
                         <textarea id="description" name="description" rows="8" required
-                                  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm form-input"><?php echo htmlspecialchars($project['description']); ?></textarea>
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm form-input"><?php echo htmlspecialchars($project['description']); ?></textarea>
                     </div>
 
                     <div>
                         <label for="outcome" class="block text-sm font-medium text-gray-700">Key Outcome/Impact</label>
                         <textarea id="outcome" name="outcome" rows="4"
-                                  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm form-input"><?php echo htmlspecialchars($project['outcome'] ?? ''); ?></textarea>
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm form-input"><?php echo htmlspecialchars($project['outcome'] ?? ''); ?></textarea>
                     </div>
 
                     <div>
@@ -138,4 +140,5 @@ unset($_SESSION['error_message']); // Clear it after displaying
         </main>
     </div>
 </body>
+
 </html>

@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error_message = 'Please enter both username and password.';
     } else {
         try {
-            $stmt = $pdo->prepare("SELECT id, username, password FROM greenheld.users WHERE username = :username");
+            $stmt = $pdo->prepare("SELECT id, username, password FROM greefrot_greenheld.users WHERE username = :username");
             $stmt->bindParam(':username', $username);
             $stmt->execute();
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -40,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="../public/css/style.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
+
 <body class="bg-gray-100">
     <div class="login-container">
         <div class="text-center mb-8">
@@ -72,4 +74,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </div>
 </body>
+
 </html>

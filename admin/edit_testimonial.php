@@ -13,7 +13,7 @@ if ($testimonial_id <= 0) {
 
 // Fetch testimonial details
 try {
-    $stmt = $pdo->prepare("SELECT * FROM greenheld.testimonials WHERE id = :id");
+    $stmt = $pdo->prepare("SELECT * FROM greefrot_greenheld.testimonials WHERE id = :id");
     $stmt->bindParam(':id', $testimonial_id, PDO::PARAM_INT);
     $stmt->execute();
     $testimonial = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -35,6 +35,7 @@ unset($_SESSION['error_message']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,6 +44,7 @@ unset($_SESSION['error_message']);
     <link href="../public/css/style.css" rel="stylesheet">
     <link href="assets/css/dashboard.css" rel="stylesheet">
 </head>
+
 <body class="bg-gray-100 font-sans antialiased">
     <div class="flex h-screen">
         <!-- Sidebar -->
@@ -62,7 +64,7 @@ unset($_SESSION['error_message']);
                 </a>
             </nav>
             <div class="p-4 border-t border-gray-700">
-                 <a href="logout.php" class="block w-full text-center px-4 py-2 text-red-300 hover:bg-red-700 hover:text-white rounded-md transition-colors duration-200">
+                <a href="logout.php" class="block w-full text-center px-4 py-2 text-red-300 hover:bg-red-700 hover:text-white rounded-md transition-colors duration-200">
                     Logout
                 </a>
             </div>
@@ -78,7 +80,7 @@ unset($_SESSION['error_message']);
             </header>
 
             <?php if ($form_error_message): ?>
-                 <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-md" role="alert">
+                <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-md" role="alert">
                     <p><?php echo htmlspecialchars($form_error_message); ?></p>
                 </div>
             <?php endif; ?>
@@ -91,21 +93,21 @@ unset($_SESSION['error_message']);
                     <div>
                         <label for="client_name" class="block text-sm font-medium text-gray-700">Client Name <span class="text-red-500">*</span></label>
                         <input type="text" id="client_name" name="client_name" required
-                               value="<?php echo htmlspecialchars($testimonial['client_name']); ?>"
-                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm form-input">
+                            value="<?php echo htmlspecialchars($testimonial['client_name']); ?>"
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm form-input">
                     </div>
 
                     <div>
                         <label for="client_title_company" class="block text-sm font-medium text-gray-700">Client Title/Company</label>
                         <input type="text" id="client_title_company" name="client_title_company"
-                               value="<?php echo htmlspecialchars($testimonial['client_title_company'] ?? ''); ?>"
-                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm form-input">
+                            value="<?php echo htmlspecialchars($testimonial['client_title_company'] ?? ''); ?>"
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm form-input">
                     </div>
 
                     <div>
                         <label for="quote" class="block text-sm font-medium text-gray-700">Quote <span class="text-red-500">*</span></label>
                         <textarea id="quote" name="quote" rows="6" required
-                                  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm form-input"><?php echo htmlspecialchars($testimonial['quote']); ?></textarea>
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm form-input"><?php echo htmlspecialchars($testimonial['quote']); ?></textarea>
                     </div>
 
                     <div>
@@ -137,4 +139,5 @@ unset($_SESSION['error_message']);
         </main>
     </div>
 </body>
+
 </html>

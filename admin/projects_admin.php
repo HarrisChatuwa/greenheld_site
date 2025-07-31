@@ -6,7 +6,7 @@ $page_title = "Manage Projects";
 
 // Fetch all projects
 try {
-    $stmt = $pdo->query("SELECT id, title, LEFT(description, 100) AS description_snippet, image_url, LEFT(outcome, 100) AS outcome_snippet, created_at FROM greenheld.projects ORDER BY created_at DESC");
+    $stmt = $pdo->query("SELECT id, title, LEFT(description, 100) AS description_snippet, image_url, LEFT(outcome, 100) AS outcome_snippet, created_at FROM greefrot_greenheld.projects ORDER BY created_at DESC");
     $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     error_log("Error fetching projects: " . $e->getMessage());
@@ -22,6 +22,7 @@ unset($_SESSION['success_message'], $_SESSION['error_message']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,6 +31,7 @@ unset($_SESSION['success_message'], $_SESSION['error_message']);
     <link href="../public/css/style.css" rel="stylesheet">
     <link href="assets/css/dashboard.css" rel="stylesheet">
 </head>
+
 <body class="bg-gray-100 font-sans antialiased">
     <div class="flex h-screen">
         <!-- Sidebar -->
@@ -49,7 +51,7 @@ unset($_SESSION['success_message'], $_SESSION['error_message']);
                 </a>
             </nav>
             <div class="p-4 border-t border-gray-700">
-                 <a href="logout.php" class="block w-full text-center px-4 py-2 text-red-300 hover:bg-red-700 hover:text-white rounded-md transition-colors duration-200">
+                <a href="logout.php" class="block w-full text-center px-4 py-2 text-red-300 hover:bg-red-700 hover:text-white rounded-md transition-colors duration-200">
                     Logout
                 </a>
             </div>
@@ -67,11 +69,11 @@ unset($_SESSION['success_message'], $_SESSION['error_message']);
                 </div>
             <?php endif; ?>
             <?php if ($error_message): ?>
-                 <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-md" role="alert">
+                <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-md" role="alert">
                     <p><?php echo htmlspecialchars($error_message); ?></p>
                 </div>
             <?php endif; ?>
-             <?php if (isset($fetch_error)): ?>
+            <?php if (isset($fetch_error)): ?>
                 <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-md" role="alert">
                     <p><?php echo htmlspecialchars($fetch_error); ?></p>
                 </div>
@@ -139,26 +141,26 @@ unset($_SESSION['success_message'], $_SESSION['error_message']);
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
                                 <?php foreach ($projects as $project): ?>
-                                <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><?php echo htmlspecialchars($project['id']); ?></td>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        <?php if (!empty($project['image_url'])): ?>
-                                            <img src="../<?php echo htmlspecialchars($project['image_url']); ?>" alt="<?php echo htmlspecialchars($project['title']); ?>" class="h-16 w-16 object-cover rounded-md">
-                                        <?php else: ?>
-                                            N/A
-                                        <?php endif; ?>
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><?php echo htmlspecialchars($project['title']); ?></td>
-                                    <td class="px-6 py-4 text-sm text-gray-500"><?php echo htmlspecialchars($project['description_snippet']); ?>...</td>
-                                    <td class="px-6 py-4 text-sm text-gray-500"><?php echo htmlspecialchars($project['outcome_snippet'] ?? ''); ?>...</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><?php echo htmlspecialchars(date('M j, Y H:i', strtotime($project['created_at']))); ?></td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                        <a href="edit_project.php?id=<?php echo $project['id']; ?>" class="text-primary hover:text-primary-dark mr-3">Edit</a>
-                                        <a href="process_project.php?action=delete&id=<?php echo $project['id']; ?>"
-                                           class="text-red-600 hover:text-red-900"
-                                           onclick="return confirm('Are you sure you want to delete this project? This cannot be undone.');">Delete</a>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><?php echo htmlspecialchars($project['id']); ?></td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <?php if (!empty($project['image_url'])): ?>
+                                                <img src="../<?php echo htmlspecialchars($project['image_url']); ?>" alt="<?php echo htmlspecialchars($project['title']); ?>" class="h-16 w-16 object-cover rounded-md">
+                                            <?php else: ?>
+                                                N/A
+                                            <?php endif; ?>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><?php echo htmlspecialchars($project['title']); ?></td>
+                                        <td class="px-6 py-4 text-sm text-gray-500"><?php echo htmlspecialchars($project['description_snippet']); ?>...</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500"><?php echo htmlspecialchars($project['outcome_snippet'] ?? ''); ?>...</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><?php echo htmlspecialchars(date('M j, Y H:i', strtotime($project['created_at']))); ?></td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <a href="edit_project.php?id=<?php echo $project['id']; ?>" class="text-primary hover:text-primary-dark mr-3">Edit</a>
+                                            <a href="process_project.php?action=delete&id=<?php echo $project['id']; ?>"
+                                                class="text-red-600 hover:text-red-900"
+                                                onclick="return confirm('Are you sure you want to delete this project? This cannot be undone.');">Delete</a>
+                                        </td>
+                                    </tr>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
@@ -169,4 +171,5 @@ unset($_SESSION['success_message'], $_SESSION['error_message']);
         </main>
     </div>
 </body>
+
 </html>
