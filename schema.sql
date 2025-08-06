@@ -40,6 +40,18 @@ CREATE TABLE `testimonials` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+
+CREATE TABLE `team_members` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`name` varchar(100) NOT NULL,
+`role` varchar(100) NOT NULL,
+`bio` text,
+`photo_url` varchar(255),
+`created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+`updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Instructions for setting up the initial admin user:
 -- 1. Connect to your MySQL database.

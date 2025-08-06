@@ -8,7 +8,7 @@ define('DB_PORT', '33061');           // Replace with your database password
 define('DB_CHARSET', 'utf8mb4');
 
 // Data Source Name (DSN)
-$dsn = "mysql:host=" . DB_HOST . ";port=". DB_PORT . " dbname=" . DB_NAME;
+$dsn = "mysql:host=" . DB_HOST . ";port=". DB_PORT . ";dbname=" . DB_NAME;
 
 // PDO Options
 $options = [
