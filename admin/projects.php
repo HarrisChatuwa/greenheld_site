@@ -49,7 +49,7 @@ $projects = $stmt->fetchAll();
 </div>
 
 <!-- Add Project Modal -->
-<div id="add-project-modal" class="modal fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+<div id="add-project-modal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
     <div class="modal-content bg-white p-8 rounded-lg shadow-lg w-1/2">
         <h2 class="text-2xl font-bold mb-4">Add New Project</h2>
         <form action="add_project.php" method="post" enctype="multipart/form-data">
@@ -79,7 +79,7 @@ $projects = $stmt->fetchAll();
 
 <?php foreach ($projects as $project): ?>
 <!-- Edit Project Modal -->
-<div id="edit-project-modal-<?php echo $project['id']; ?>" class="modal fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+<div id="edit-project-modal-<?php echo $project['id']; ?>" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
     <div class="modal-content bg-white p-8 rounded-lg shadow-lg w-1/2">
         <h2 class="text-2xl font-bold mb-4">Edit Project</h2>
         <form action="edit_project.php?id=<?php echo $project['id']; ?>" method="post" enctype="multipart/form-data">
@@ -109,7 +109,7 @@ $projects = $stmt->fetchAll();
 </div>
 <?php endforeach; ?>
 
-<div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
+<div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40"></div>
 
 <?php
 require_once 'includes/footer.php';

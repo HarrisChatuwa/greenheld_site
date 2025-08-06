@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Image upload handling
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0) {
-        $targetDir = "../public/uploads/";
+        $targetDir = "../uploads/";
         if (!is_dir($targetDir)) {
             mkdir($targetDir, 0755, true);
         }
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
         if (in_array($fileType, $allowTypes)) {
             if (move_uploaded_file($_FILES["photo"]["tmp_name"], $targetFilePath)) {
-                $photoUrl = "public/uploads/" . $fileName;
+                $photoUrl = "uploads/" . $fileName;
             }
         }
     }

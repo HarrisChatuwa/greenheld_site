@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (overlay) {
         overlay.addEventListener('click', () => {
-            const modals = document.querySelectorAll('.modal.active');
+            const modals = document.querySelectorAll('.modal:not(.hidden)');
             modals.forEach(modal => {
                 closeModal(modal);
             });
@@ -30,17 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openModal(modal) {
         if (modal == null) return;
-        modal.classList.add('active');
+        modal.classList.remove('hidden');
         if (overlay) {
-            overlay.classList.add('active');
+            overlay.classList.remove('hidden');
         }
     }
 
     function closeModal(modal) {
         if (modal == null) return;
-        modal.classList.remove('active');
+        modal.classList.add('hidden');
         if (overlay) {
-            overlay.classList.remove('active');
+            overlay.classList.add('hidden');
         }
     }
 });
