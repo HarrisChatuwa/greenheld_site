@@ -33,7 +33,7 @@ $users = $stmt->fetchAll();
             <?php foreach ($users as $user): ?>
                 <tr>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"><?php echo htmlspecialchars($user['username']); ?></td>
-                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"><?php echo htmlspecialchars($user['created_at']); ?></td>
+                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"><?php echo date('M d, Y', strtotime($user['created_at'])); ?></td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <button data-modal-target="#edit-user-modal-<?php echo $user['id']; ?>" class="text-indigo-600 hover:text-indigo-900">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" viewBox="0 0 20 20" fill="currentColor">

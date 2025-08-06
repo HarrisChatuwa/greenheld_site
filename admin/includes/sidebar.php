@@ -29,11 +29,11 @@
         </ul>
     </nav>
 </aside>
-<div class="flex-1 flex flex-col">
+<div class="flex-1 flex flex-col overflow-hidden">
     <header class="bg-white shadow p-4 flex justify-between items-center">
         <h1 class="text-2xl font-bold"></h1>
         <div class="flex items-center">
             <span class="mr-4">Welcome, <?php echo $_SESSION['username']; ?></span>
         </div>
     </header>
-    <main class="flex-1 p-6">
+    <main class="flex-1 p-6 overflow-y-auto">
