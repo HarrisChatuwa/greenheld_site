@@ -13,7 +13,7 @@
         <a href="index.php" class="text-2xl font-bold text-primary">Greenheld</a>
         <nav class="hidden md:flex space-x-1 items-center">
             <a href="index.php" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Home</a>
-            <a href="about.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">About</a>
+            <a href="about.php" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">About</a>
             <a href="services.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Services</a>
             <a href="projects.php" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Projects</a>
             <a href="testimonials.php" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Testimonials</a>
@@ -30,7 +30,7 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg py-2">
         <a href="index.php" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Home</a>
-        <a href="about.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">About</a>
+        <a href="about.php" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">About</a>
         <a href="services.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Services</a>
         <a href="projects.php" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Projects</a>
         <a href="testimonials.php" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Testimonials</a>
@@ -128,29 +128,20 @@
             </section>
 
             <section id="team" class="py-12 bg-white rounded-xl md:p-8 mt-12 md:mt-16">
-                <h2 class="text-3xl font-semibold text-primary-dark mb-10 text-center">Meet Our (Placeholder) Team</h2>
-                <p class="text-neutral-default leading-relaxed max-w-2xl mx-auto text-center mb-12">
-                    Our strength lies in our dedicated team of experienced researchers, analysts, and consultants, each bringing a wealth of knowledge and passion for social impact. (Further details and actual team profiles will be populated later).
-                </p>
+                <h2 class="text-3xl font-semibold text-primary-dark mb-10 text-center">Meet Our Team</h2>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                    <div class="text-center p-6 bg-neutral-light rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <img src="https://picsum.photos/seed/client1/200/200" alt="Team Member Dr. John Doe" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-2 border-primary">
-                        <h3 class="text-xl font-semibold text-primary-dark">Dr. John Doe</h3>
-                        <p class="text-accent font-medium">Lead Researcher & Founder</p>
-                        <p class="text-sm text-neutral-default mt-2">PhD in Social Policy, 15+ years experience in M&E and quantitative analysis.</p>
-                    </div>
-                    <div class="text-center p-6 bg-neutral-light rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <img src="https://picsum.photos/seed/client4/200/200" alt="Team Member Jane Smith" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-2 border-primary">
-                        <h3 class="text-xl font-semibold text-primary-dark">Jane Smith</h3>
-                        <p class="text-accent font-medium">M&E Specialist</p>
-                        <p class="text-sm text-neutral-default mt-2">MSc in Development Studies, expert in qualitative methods and participatory research.</p>
-                    </div>
-                    <div class="text-center p-6 bg-neutral-light rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <img src="https://picsum.photos/seed/client8/200/200" alt="Team Member Alice Brown" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-2 border-primary">
-                        <h3 class="text-xl font-semibold text-primary-dark">Alice Brown</h3>
-                        <p class="text-accent font-medium">Senior Data Analyst</p>
-                        <p class="text-sm text-neutral-default mt-2">BSc Statistics, proficient in SPSS, R, and data visualization tools.</p>
-                    </div>
+                    <?php
+                    require_once '../config/db.php';
+                    $stmt = $pdo->query('SELECT * FROM team_members ORDER BY created_at ASC');
+                    while ($row = $stmt->fetch()) {
+                        echo '<div class="text-center p-6 bg-neutral-light rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">';
+                        echo '<img src="' . htmlspecialchars($row['photo_url']) . '" alt="Team Member ' . htmlspecialchars($row['name']) . '" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-2 border-primary">';
+                        echo '<h3 class="text-xl font-semibold text-primary-dark">' . htmlspecialchars($row['name']) . '</h3>';
+                        echo '<p class="text-accent font-medium">' . htmlspecialchars($row['role']) . '</p>';
+                        echo '<p class="text-sm text-neutral-default mt-2">' . htmlspecialchars($row['bio']) . '</p>';
+                        echo '</div>';
+                    }
+                    ?>
                 </div>
             </section>
         </div>
@@ -175,7 +166,7 @@
             <h3 class="text-xl font-semibold mb-4 text-white">Quick Links</h3>
             <ul class="space-y-2 text-sm">
                 <li><a href="index.php" class="hover:text-primary transition duration-300">Home</a></li>
-                <li><a href="about.html" class="hover:text-primary transition duration-300">About Us</a></li>
+                <li><a href="about.php" class="hover:text-primary transition duration-300">About Us</a></li>
                 <li><a href="services.html" class="hover:text-primary transition duration-300">Services</a></li>
                 <li><a href="projects.php" class="hover:text-primary transition duration-300">Projects</a></li>
                 <li><a href="testimonials.php" class="hover:text-primary transition duration-300">Testimonials</a></li>

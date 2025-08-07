@@ -35,7 +35,7 @@ try {
         <a href="index.php" class="text-2xl font-bold text-primary">Greenheld</a>
         <nav class="hidden md:flex space-x-1 items-center">
             <a href="index.php" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Home</a>
-            <a href="about.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">About</a>
+            <a href="about.php" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">About</a>
             <a href="services.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Services</a>
             <a href="projects.php" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Projects</a>
             <a href="testimonials.php" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Testimonials</a>
@@ -52,7 +52,7 @@ try {
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg py-2">
         <a href="index.php" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Home</a>
-        <a href="about.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">About</a>
+        <a href="about.php" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">About</a>
         <a href="services.html" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Services</a>
         <a href="projects.php" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Projects</a>
         <a href="testimonials.php" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Testimonials</a>
@@ -78,7 +78,7 @@ try {
                 <p class="text-neutral-default text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
                     greenheld Social Research and Consulting is a leading firm dedicated to providing comprehensive research, monitoring, and evaluation services. We empower NGOs, government agencies, and private sector organizations with data-driven insights to achieve their social impact goals.
                 </p>
-                <a href="about.html" class="text-accent hover:underline font-semibold text-lg">Learn More About Us</a>
+                <a href="about.php" class="text-accent hover:underline font-semibold text-lg">Learn More About Us</a>
             </div>
         </section>
 
@@ -194,7 +194,7 @@ try {
             <h3 class="text-xl font-semibold mb-4 text-white">Quick Links</h3>
             <ul class="space-y-2 text-sm">
                 <li><a href="index.php" class="hover:text-primary transition duration-300">Home</a></li>
-                <li><a href="about.html" class="hover:text-primary transition duration-300">About Us</a></li>
+                <li><a href="about.php" class="hover:text-primary transition duration-300">About Us</a></li>
                 <li><a href="services.html" class="hover:text-primary transition duration-300">Services</a></li>
                 <li><a href="projects.php" class="hover:text-primary transition duration-300">Projects</a></li>
                 <li><a href="testimonials.php" class="hover:text-primary transition duration-300">Testimonials</a></li>

@@ -19,3 +19,10 @@
     opacity: 1;
     pointer-events: auto;
 }
+
+.truncate-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px; /* Adjust as needed */
+}

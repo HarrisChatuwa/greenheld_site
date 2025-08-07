@@ -55,7 +55,12 @@ $users = $stmt->fetchAll();
 
 <!-- Add User Modal -->
 <div id="add-user-modal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
-    <div class="modal-content bg-white p-8 rounded-lg shadow-lg w-1/2">
+    <div class="modal-content bg-white p-8 rounded-lg shadow-lg w-1/2 relative">
+        <button data-modal-close class="absolute top-0 right-0 mt-4 mr-4 text-gray-600 hover:text-gray-900">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
         <h2 class="text-2xl font-bold mb-4">Add New User</h2>
         <form action="add_user.php" method="post">
             <div class="mb-4">
@@ -77,7 +82,12 @@ $users = $stmt->fetchAll();
 <?php foreach ($users as $user): ?>
 <!-- Edit User Modal -->
 <div id="edit-user-modal-<?php echo $user['id']; ?>" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
-    <div class="modal-content bg-white p-8 rounded-lg shadow-lg w-1/2">
+    <div class="modal-content bg-white p-8 rounded-lg shadow-lg w-1/2 relative">
+        <button data-modal-close class="absolute top-0 right-0 mt-4 mr-4 text-gray-600 hover:text-gray-900">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
         <h2 class="text-2xl font-bold mb-4">Edit User</h2>
         <form action="edit_user.php?id=<?php echo $user['id']; ?>" method="post">
             <div class="mb-4">

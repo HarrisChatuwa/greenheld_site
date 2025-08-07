@@ -34,7 +34,7 @@ $testimonials = $stmt->fetchAll();
         <tbody>
             <?php foreach ($testimonials as $testimonial): ?>
                 <tr>
-                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"><?php echo htmlspecialchars($testimonial['quote']); ?></td>
+                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm truncate max-w-xs"><?php echo htmlspecialchars($testimonial['quote']); ?></td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"><?php echo htmlspecialchars($testimonial['client_name']); ?></td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"><?php echo htmlspecialchars($testimonial['client_title_company']); ?></td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"><img src="../<?php echo htmlspecialchars($testimonial['client_photo_url']); ?>" alt="<?php echo htmlspecialchars($testimonial['client_name']); ?>" width="50"></td>
@@ -59,7 +59,12 @@ $testimonials = $stmt->fetchAll();
 
 <!-- Add Testimonial Modal -->
 <div id="add-testimonial-modal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
-    <div class="modal-content bg-white p-8 rounded-lg shadow-lg w-1/2">
+    <div class="modal-content bg-white p-8 rounded-lg shadow-lg w-1/2 relative">
+        <button data-modal-close class="absolute top-0 right-0 mt-4 mr-4 text-gray-600 hover:text-gray-900">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
         <h2 class="text-2xl font-bold mb-4">Add New Testimonial</h2>
         <form action="add_testimonial.php" method="post" enctype="multipart/form-data">
             <div class="mb-4">
@@ -89,7 +94,12 @@ $testimonials = $stmt->fetchAll();
 <?php foreach ($testimonials as $testimonial): ?>
 <!-- Edit Testimonial Modal -->
 <div id="edit-testimonial-modal-<?php echo $testimonial['id']; ?>" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
-    <div class="modal-content bg-white p-8 rounded-lg shadow-lg w-1/2">
+    <div class="modal-content bg-white p-8 rounded-lg shadow-lg w-1/2 relative">
+        <button data-modal-close class="absolute top-0 right-0 mt-4 mr-4 text-gray-600 hover:text-gray-900">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
         <h2 class="text-2xl font-bold mb-4">Edit Testimonial</h2>
         <form action="edit_testimonial.php?id=<?php echo $testimonial['id']; ?>" method="post" enctype="multipart/form-data">
             <div class="mb-4">
