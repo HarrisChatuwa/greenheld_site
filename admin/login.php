@@ -33,8 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="w-full max-w-md">
         <form action="login.php" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <div class="text-center mb-6">
-                <img src="../public/assets/images/logo.png" alt="greenheld Logo" class="mx-auto" style="height: 20rem;">
-                <h1 class="text-2xl font-bold text-gray-700 mt-2">greenheld Admin</h1>
+                <!-- <h1 class="text-2xl font-bold text-gray-700 mb-4">Greenheld Admin</h1> -->
+                <img src="../public/assets/images/logo.png" alt="greenheld Logo" class="mx-auto" style="height: 8rem;">
             </div>
             <?php if (isset($error)): ?>
                 <p class="text-red-500 text-xs italic mb-4"><?php echo $error; ?></p>
