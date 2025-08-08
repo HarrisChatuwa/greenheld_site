@@ -72,7 +72,7 @@ try {
                 <div id="project-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
                     <?php foreach ($projects as $project): ?>
                     <div id="project-<?php echo htmlspecialchars($project['id']); ?>" class="bg-white rounded-xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1">
-                        <img src="<?php echo htmlspecialchars(empty($project['image_url']) ? 'https://via.placeholder.com/600x400/06b6d4/ffffff?text=Project+Image' : $project['image_url']); ?>"
+                        <img src="../<?php echo htmlspecialchars(empty($project['image_url']) ? 'https://via.placeholder.com/600x400/06b6d4/ffffff?text=Project+Image' : $project['image_url']); ?>"
                              alt="<?php echo htmlspecialchars($project['title']); ?>" class="w-full h-56 object-cover">
                         <div class="p-6 flex flex-col flex-grow">
                             <h2 class="text-2xl font-semibold text-primary-dark mb-3"><?php echo htmlspecialchars($project['title']); ?></h2>

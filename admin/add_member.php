@@ -26,8 +26,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (in_array($fileType, $allowTypes)) {
             if (move_uploaded_file($_FILES["photo"]["tmp_name"], $targetFilePath)) {
                 $photoUrl = "uploads/" . $fileName;
+            } else {
+                error_log("Failed to move uploaded file for team member. Check permissions for 'uploads' directory.");
             }
         }
+    } elseif (isset($_FILES['photo']) && $_FILES['photo']['error'] != UPLOAD_ERR_NO_FILE) {
+        error_log("File upload error for team member photo: " . $_FILES['photo']['error']);
     }
 
     $sql = "INSERT INTO team_members (name, role, bio, photo_url) VALUES (:name, :role, :bio, :photo_url)";

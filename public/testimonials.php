@@ -73,7 +73,7 @@ try {
                     <?php foreach ($testimonials as $testimonial): ?>
                     <div class="bg-white p-8 rounded-xl shadow-xl border border-neutral-200 flex flex-col items-center text-center transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                         <?php if (!empty($testimonial['client_photo_url'])): ?>
-                            <img src="<?php echo htmlspecialchars($testimonial['client_photo_url']); ?>"
+                            <img src="../<?php echo htmlspecialchars($testimonial['client_photo_url']); ?>"
                                  alt="Photo of <?php echo htmlspecialchars($testimonial['client_name']); ?>"
                                  class="w-24 h-24 rounded-full object-cover mb-5 shadow-md border-2 border-primary">
                         <?php else: ?>

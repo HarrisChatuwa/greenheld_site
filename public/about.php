@@ -135,7 +135,7 @@
                     $stmt = $pdo->query('SELECT * FROM team_members ORDER BY created_at ASC');
                     while ($row = $stmt->fetch()) {
                         echo '<div class="text-center p-6 bg-neutral-light rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">';
-                        echo '<img src="' . htmlspecialchars($row['photo_url']) . '" alt="Team Member ' . htmlspecialchars($row['name']) . '" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-2 border-primary">';
+                        echo '<img src="../' . htmlspecialchars($row['photo_url']) . '" alt="Team Member ' . htmlspecialchars($row['name']) . '" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-2 border-primary">';
                         echo '<h3 class="text-xl font-semibold text-primary-dark">' . htmlspecialchars($row['name']) . '</h3>';
                         echo '<p class="text-accent font-medium">' . htmlspecialchars($row['role']) . '</p>';
                         echo '<p class="text-sm text-neutral-default mt-2">' . htmlspecialchars($row['bio']) . '</p>';
