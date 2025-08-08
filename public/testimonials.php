@@ -19,11 +19,14 @@ try {
     <title>Client Testimonials - greenheld Social Research and Consulting</title>
     <link href="css/style.css" rel="stylesheet">
     <meta name="description" content="Read what our clients say about greenheld Social Research and Consulting.">
+    <link rel="icon" href="assets/images/logo_icon.png" type="image/png">
 </head>
 <body class="bg-neutral-light font-sans text-neutral-dark">
 <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="index.php" class="text-2xl font-bold text-primary">greenheld</a>
+        <a href="index.php">
+            <img src="assets/images/logo.png" alt="greenheld Logo" style="height: 3.5rem;">
+        </a>
         <nav class="hidden md:flex space-x-1 items-center">
             <a href="index.php" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Home</a>
             <a href="about.php" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">About</a>

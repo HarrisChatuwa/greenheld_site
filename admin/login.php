@@ -26,12 +26,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
+    <link rel="icon" href="../public/assets/images/logo_icon.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 flex items-center justify-center h-screen">
     <div class="w-full max-w-md">
         <form action="login.php" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            <h1 class="text-2xl font-bold mb-6 text-center">Admin Login</h1>
+            <div class="text-center mb-6">
+                <img src="../public/assets/images/logo.png" alt="greenheld Logo" class="mx-auto" style="height: 20rem;">
+                <h1 class="text-2xl font-bold text-gray-700 mt-2">greenheld Admin</h1>
+            </div>
             <?php if (isset($error)): ?>
                 <p class="text-red-500 text-xs italic mb-4"><?php echo $error; ?></p>
             <?php endif; ?>

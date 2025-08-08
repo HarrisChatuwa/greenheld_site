@@ -1,5 +1,10 @@
 <aside class="w-64 bg-gray-800 text-white flex-shrink-0">
     <div class="p-4 text-2xl font-bold">Admin</div>
+    <!-- <div class="p-4">
+        <a href="index.php">
+            <img src="../public/assets/images/logo.png" alt="greenheld Logo" class="mx-auto" style="height: 3.5rem;">
+        </a>
+    </div> -->
     <nav>
         <ul>
             <li class="p-4 hover:bg-gray-700"><a href="index.php" class="flex items-center">
