@@ -124,7 +124,7 @@ try {
                 <div class="grid md:grid-cols-3 gap-8 mb-10">
                     <?php foreach ($featured_projects as $project): ?>
                     <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-left flex flex-col">
-                        <img src="<?php echo htmlspecialchars(empty($project['image_url']) ? 'https://via.placeholder.com/400x250/06b6d4/ffffff?text=Project+Image' : $project['image_url']); ?>"
+                        <img src="../<?php echo htmlspecialchars(empty($project['image_url']) ? 'https://via.placeholder.com/400x250/06b6d4/ffffff?text=Project+Image' : $project['image_url']); ?>"
                              alt="<?php echo htmlspecialchars($project['title']); ?>" class="w-full h-48 object-cover rounded-md mb-4">
                         <h3 class="text-xl font-semibold text-primary mb-2"><?php echo htmlspecialchars($project['title']); ?></h3>
                         <p class="text-sm text-neutral-default flex-grow mb-4"><?php echo htmlspecialchars($project['description_snippet']); ?>...</p>

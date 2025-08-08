@@ -129,6 +129,9 @@
 
             <section id="team" class="py-12 bg-white rounded-xl md:p-8 mt-12 md:mt-16">
                 <h2 class="text-3xl font-semibold text-primary-dark mb-10 text-center">Meet Our Team</h2>
+                <p class="text-neutral-default leading-relaxed max-w-2xl mx-auto text-center mb-12">
+                    Meet the heart of our company. We're a collaborative group of experts who bring diverse skills and a wealth of knowledge to every project, all driven by our shared purpose of making a meaningful difference.
+                </p>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
                     <?php
                     require_once '../config/db.php';
