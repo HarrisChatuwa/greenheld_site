@@ -18,7 +18,7 @@ $testimonial = $stmt->fetch();
 
 if ($testimonial) {
     // Delete image file
-    if (file_exists('../' . $testimonial['client_photo_url'])) {.
+    if ($testimonial && !empty($testimonial['client_photo_url']) && file_exists('../' . $testimonial['client_photo_url'])) {
         unlink('../' . $testimonial['client_photo_url']);
     }
 
