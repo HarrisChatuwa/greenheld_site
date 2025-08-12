@@ -132,20 +132,41 @@
 
             <section id="team" class="py-12 bg-white rounded-xl md:p-8 mt-12 md:mt-16">
                 <h2 class="text-3xl font-semibold text-primary-dark mb-10 text-center">Meet Our Team</h2>
+                <?php
+                require_once '../config/db.php';
+                try {
+                    $stmt = $pdo->query('SELECT * FROM team_members ORDER BY created_at ASC');
+                    $team_members = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    if (!empty($team_members)) {
+                ?>
                 <p class="text-neutral-default leading-relaxed max-w-2xl mx-auto text-center mb-12">
                     Meet the heart of our company. We're a collaborative group of experts who bring diverse skills and a wealth of knowledge to every project, all driven by our shared purpose of making a meaningful difference.
                 </p>
+                <?php } else {?>
+                <p class="text-neutral-default leading-relaxed max-w-2xl mx-auto text-center mb-12">
+                   Our Team is Growing. We are currently assembling a dedicated team of passionate researchers and consultants committed to driving social change. We look forward to introducing them here soon.
+                </p>
+                <?php } ?>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                    <?php
-                    require_once '../config/db.php';
-                    $stmt = $pdo->query('SELECT * FROM team_members ORDER BY created_at ASC');
-                    while ($row = $stmt->fetch()) {
-                        echo '<div class="text-center p-6 bg-neutral-light rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">';
-                        echo '<img src="../' . htmlspecialchars($row['photo_url']) . '" alt="Team Member ' . htmlspecialchars($row['name']) . '" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-2 border-primary">';
-                        echo '<h3 class="text-xl font-semibold text-primary-dark">' . htmlspecialchars($row['name']) . '</h3>';
-                        echo '<p class="text-accent font-medium">' . htmlspecialchars($row['role']) . '</p>';
-                        echo '<p class="text-sm text-neutral-default mt-2">' . htmlspecialchars($row['bio']) . '</p>';
-                        echo '</div>';
+                <?php
+
+                        if (empty($team_members)) {
+                            #echo '<div class="text-neutral-default leading-relaxed max-w-2xl mx-auto text-center mb-12">';
+                            #echo '<p class="text-neutral-default leading-relaxed max-w-2xl mx-auto text-center mb-12">Our Team is Growing. We are currently assembling a dedicated team of passionate researchers and consultants committed to driving social change. We look forward to introducing them here soon.</p>';
+                           # echo '</div>';
+                        } else {
+                            foreach ($team_members as $row) {
+                                echo '<div class="text-center p-6 bg-neutral-light rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">';
+                                echo '<img src="../' . htmlspecialchars($row['photo_url']) . '" alt="Team Member ' . htmlspecialchars($row['name']) . '" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-2 border-primary">';
+                                echo '<h3 class="text-xl font-semibold text-primary-dark">' . htmlspecialchars($row['name']) . '</h3>';
+                                echo '<p class="text-accent font-medium">' . htmlspecialchars($row['role']) . '</p>';
+                                echo '<p class="text-sm text-neutral-default mt-2">' . htmlspecialchars($row['bio']) . '</p>';
+                                echo '</div>';
+                            }
+                        }
+                    } catch (PDOException $e) {
+                        error_log("Error fetching team members: " . $e->getMessage());
+                        echo '<p class="text-red-500 text-center col-span-full">Sorry, we were unable to load team member information at this time.</p>';
                     }
                     ?>
                 </div>
