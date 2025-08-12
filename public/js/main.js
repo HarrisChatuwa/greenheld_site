@@ -11,17 +11,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Active navigation link
     const currentPage = window.location.pathname.split('/').pop();
+    let activeLink = null;
+    let activeMobileLink = null;
+
     if (currentPage === 'index.php' || currentPage === '') {
-        document.getElementById('nav-home').classList.add('bg-neutral-light', 'text-primary');
+        activeLink = document.getElementById('nav-home');
+        activeMobileLink = document.getElementById('nav-home-mobile');
     } else if (currentPage === 'about.php') {
-        document.getElementById('nav-about').classList.add('bg-neutral-light', 'text-primary');
+        activeLink = document.getElementById('nav-about');
+        activeMobileLink = document.getElementById('nav-about-mobile');
     } else if (currentPage === 'services.html') {
-        document.getElementById('nav-services').classList.add('bg-neutral-light', 'text-primary');
+        activeLink = document.getElementById('nav-services');
+        activeMobileLink = document.getElementById('nav-services-mobile');
     } else if (currentPage === 'projects.php') {
-        document.getElementById('nav-projects').classList.add('bg-neutral-light', 'text-primary');
+        activeLink = document.getElementById('nav-projects');
+        activeMobileLink = document.getElementById('nav-projects-mobile');
     } else if (currentPage === 'testimonials.php') {
-        document.getElementById('nav-testimonials').classList.add('bg-neutral-light', 'text-primary');
+        activeLink = document.getElementById('nav-testimonials');
+        activeMobileLink = document.getElementById('nav-testimonials-mobile');
     } else if (currentPage === 'contact.html') {
-        // The contact link is a button, so we don't highlight it in the same way
+        activeLink = document.getElementById('nav-contact');
+        activeMobileLink = document.getElementById('nav-contact-mobile');
+    }
+
+    if (activeLink) {
+        activeLink.classList.add('bg-neutral-light', 'text-primary');
+    }
+    if (activeMobileLink) {
+        activeMobileLink.classList.add('bg-primary-light', 'text-primary-dark');
     }
 });
