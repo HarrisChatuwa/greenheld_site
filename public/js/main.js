@@ -20,103 +20,121 @@ $(document).ready(function() {
         }
     });
 
-    // Client-Side Contact Form Validation
-    $('#contactForm').submit(function(event) {
-        var isValid = true;
-        var formMessages = $('#form-feedback');
-        formMessages.empty().removeClass('text-green-600 text-red-600');
+    // Client-Side Contact Form Validation & AJAX Submission
+    const contactForm = document.getElementById('contactForm');
+    const formFeedback = document.getElementById('form-feedback');
 
-        // Validate Name
-        var name = $('#name').val().trim();
-        if (name === '') {
-            $('#nameError').text('Please enter your name.').show();
-            $('#name').addClass('border-red-500');
-            isValid = false;
-        } else {
-            $('#nameError').hide();
-            $('#name').removeClass('border-red-500');
-        }
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Stop the default form submission
 
-        // Validate Email
-        var email = $('#email').val().trim();
-        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (email === '' || !emailRegex.test(email)) {
-            $('#emailError').text('Please enter a valid email address.').show();
-            $('#email').addClass('border-red-500');
-            isValid = false;
-        } else {
-            $('#emailError').hide();
-            $('#email').removeClass('border-red-500');
-        }
+            // Clear previous feedback
+            formFeedback.textContent = '';
+            formFeedback.className = 'mt-5 text-center text-base';
 
-        // Validate Subject
-        var subject = $('#subject').val().trim();
-        if (subject === '') {
-            $('#subjectError').text('Please enter a subject.').show();
-            $('#subject').addClass('border-red-500');
-            isValid = false;
-        } else {
-            $('#subjectError').hide();
-            $('#subject').removeClass('border-red-500');
-        }
+            // --- Client-side validation ---
+            let isValid = true;
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const subject = document.getElementById('subject');
+            const message = document.getElementById('message');
+            
+            // Helper to show/hide errors
+            const showError = (field, errorId, message) => {
+                document.getElementById(errorId).textContent = message;
+                document.getElementById(errorId).style.display = 'block';
+                field.classList.add('border-red-500');
+                isValid = false;
+            };
+            const clearError = (field, errorId) => {
+                document.getElementById(errorId).style.display = 'none';
+                field.classList.remove('border-red-500');
+            };
 
-        // Validate Message
-        var message = $('#message').val().trim();
-        if (message === '') {
-            $('#messageError').text('Please enter your message.').show();
-            $('#message').addClass('border-red-500');
-            isValid = false;
-        } else {
-            $('#messageError').hide();
-            $('#message').removeClass('border-red-500');
-        }
-
-        if (!isValid) {
-            event.preventDefault(); // Prevent form submission if validation fails
-            formMessages.text('Please correct the errors above.').addClass('text-red-600');
-            return false;
-        }
-
-        // If client-side validation passes, you can proceed with AJAX submission or normal form submission.
-        // For this phase, we'll allow normal form submission if JS validation passes.
-        // If using AJAX, you would do:
-        /*
-        event.preventDefault(); // Prevent default form submission
-        var formData = $(this).serialize();
-        $.ajax({
-            type: 'POST',
-            url: $(this).attr('action'), // Get URL from form's action attribute
-            data: formData
-        })
-        .done(function(response) {
-            // Make sure that the formMessages div has the 'success' class.
-            formMessages.removeClass('text-red-600');
-            formMessages.addClass('text-green-600');
-
-            // Set the message text.
-            formMessages.text('Message sent successfully! We will get back to you soon.');
-
-            // Clear the form.
-            $('#contactForm')[0].reset();
-            $('#name').removeClass('border-red-500');
-            $('#email').removeClass('border-red-500');
-            $('#subject').removeClass('border-red-500');
-            $('#message').removeClass('border-red-500');
-        })
-        .fail(function(data) {
-            // Make sure that the formMessages div has the 'error' class.
-            formMessages.removeClass('text-green-600');
-            formMessages.addClass('text-red-600');
-
-            // Set the message text.
-            if (data.responseText !== '') {
-                formMessages.text(data.responseText);
+            // Validate Name
+            if (name.value.trim() === '') {
+                showError(name, 'nameError', 'Please enter your name.');
             } else {
-                formMessages.text('Oops! An error occurred and your message could not be sent.');
+                clearError(name, 'nameError');
             }
+
+            // Validate Email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email.value.trim() === '' || !emailRegex.test(email.value)) {
+                showError(email, 'emailError', 'Please enter a valid email address.');
+            } else {
+                clearError(email, 'emailError');
+            }
+
+            // Validate Subject
+            if (subject.value.trim() === '') {
+                showError(subject, 'subjectError', 'Please enter a subject.');
+            } else {
+                clearError(subject, 'subjectError');
+            }
+
+            // Validate Message
+            if (message.value.trim() === '') {
+                showError(message, 'messageError', 'Please enter your message.');
+            } else {
+                clearError(message, 'messageError');
+            }
+
+            if (!isValid) {
+                formFeedback.textContent = 'Please correct the errors above.';
+                formFeedback.classList.add('text-red-600');
+                return;
+            }
+
+            // --- AJAX Submission using Fetch ---
+            const formData = {
+                name: name.value.trim(),
+                email: email.value.trim(),
+                subject: subject.value.trim(),
+                message: message.value.trim()
+            };
+
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'Sending...';
+
+            fetch('php/contact_handler.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    formFeedback.textContent = data.message;
+                    formFeedback.classList.add('text-green-600');
+                    contactForm.reset(); // Clear the form fields
+                    // Clear all error states visually
+                    clearError(name, 'nameError');
+                    clearError(email, 'emailError');
+                    clearError(subject, 'subjectError');
+                    clearError(message, 'messageError');
+                } else {
+                    formFeedback.textContent = data.message || 'An unknown error occurred.';
+                    formFeedback.classList.add('text-red-600');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                formFeedback.textContent = 'A network error occurred. Please try again later.';
+                formFeedback.classList.add('text-red-600');
+            })
+            .finally(() => {
+                // Re-enable the button
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+            });
         });
-        */
-    });
+    }
 
     // Update Current Year in Footer
     if ($('#currentYear').length) {
