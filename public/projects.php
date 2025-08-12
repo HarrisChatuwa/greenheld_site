@@ -28,12 +28,12 @@ try {
             <img src="assets/images/logo.png" alt="greenheld Logo" style="height: 3.5rem;">
         </a>
         <nav class="hidden md:flex space-x-1 items-center">
-            <a href="index.php" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Home</a>
-            <a href="about.php" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">About</a>
-            <a href="services.html" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Services</a>
-            <a href="projects.php" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Projects</a>
-            <a href="testimonials.php" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Testimonials</a>
-            <a href="contact.html" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md transition-all duration-300">Contact Us</a>
+            <a href="index.php" id="nav-home" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Home</a>
+            <a href="about.php" id="nav-about" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">About</a>
+            <a href="services.html" id="nav-services" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Services</a>
+            <a href="projects.php" id="nav-projects" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Projects</a>
+            <a href="testimonials.php" id="nav-testimonials" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Testimonials</a>
+            <a href="contact.html" id="nav-contact" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md transition-all duration-300">Contact Us</a>
         </nav>
         <div class="md:hidden">
             <button id="mobile-menu-button" class="text-neutral-dark focus:outline-none">

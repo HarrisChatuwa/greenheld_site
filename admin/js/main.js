@@ -74,4 +74,26 @@ document.addEventListener('DOMContentLoaded', function () {
             overlay.classList.add('hidden');
         }
     }
+
+    // Active sidebar link
+    const currentPage = window.location.pathname.split('/').pop();
+    let activeLink = null;
+
+    if (currentPage === 'index.php' || currentPage === '') {
+        activeLink = document.getElementById('nav-dashboard');
+    } else if (currentPage === 'submissions.php') {
+        activeLink = document.getElementById('nav-submissions');
+    } else if (currentPage === 'projects.php' || currentPage === 'add_project.php' || currentPage === 'edit_project.php') {
+        activeLink = document.getElementById('nav-projects');
+    } else if (currentPage === 'testimonials.php' || currentPage === 'add_testimonial.php' || currentPage === 'edit_testimonial.php') {
+        activeLink = document.getElementById('nav-testimonials');
+    } else if (currentPage === 'users.php' || currentPage === 'add_user.php' || currentPage === 'edit_user.php') {
+        activeLink = document.getElementById('nav-users');
+    } else if (currentPage === 'team.php' || currentPage === 'add_member.php' || currentPage === 'edit_member.php') {
+        activeLink = document.getElementById('nav-team');
+    }
+
+    if (activeLink) {
+        activeLink.parentElement.classList.add('bg-gray-700', 'rounded-md');
+    }
 });
