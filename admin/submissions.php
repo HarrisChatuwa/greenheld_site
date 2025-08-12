@@ -57,7 +57,7 @@ $submissions = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <tbody class="text-gray-700 text-sm">
                 <?php if (empty($submissions)): ?>
                     <tr>
-                        <td colspan="6" class="text-center py-10">No submissions yet.</td>
+                        <td colspan="6" class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center">No submissions yet.</td>
                     </tr>
                 <?php else: ?>
                     <?php foreach ($submissions as $submission): ?>
