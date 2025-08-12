@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - greenheld Social Research and Consulting</title>
+    <title>About Us - Greenheld Social Research and Consulting</title>
     <link href="css/style.css" rel="stylesheet">
-    <meta name="description" content="Learn about greenheld Social Research and Consulting's mission, vision, and team.">
+    <meta name="description" content="Learn about Greenheld Social Research and Consulting's mission, vision, and team.">
     <link rel="icon" href="assets/images/logo_icon.png" type="image/png">
 </head>
 <body class="bg-neutral-light font-sans text-neutral-dark">
@@ -43,11 +43,11 @@
 
     <main class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-6 md:px-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-12 text-center">About greenheld Social Research and Consulting</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-12 text-center">About Greenheld Social Research and Consulting</h1>
 
             <section id="company-overview" class="mb-16 md:mb-20">
                 <p class="text-lg md:text-xl text-neutral-default leading-relaxed max-w-3xl mx-auto text-center">
-                    greenheld Social Research and Consulting is dedicated to providing high-quality research and strategic advice to organizations working towards social betterment. We believe in the power of data to inform decisions and drive positive change. Our work spans across various sectors including health, education, agriculture, and governance, aiming to provide actionable insights for sustainable development.
+                    Greenheld Social Research and Consulting is dedicated to providing high-quality research and strategic advice to organizations working towards social betterment. We believe in the power of data to inform decisions and drive positive change. Our work spans across various sectors including health, education, agriculture, and governance, aiming to provide actionable insights for sustainable development.
                 </p>
             </section>
 
@@ -126,7 +126,7 @@
             <section id="approach" class="mb-12 md:mb-16 p-8 bg-neutral-light rounded-xl shadow-lg">
                 <h2 class="text-3xl font-semibold text-primary-dark mb-8 text-center">Our Approach</h2>
                 <p class="text-neutral-default leading-relaxed max-w-3xl mx-auto text-lg">
-                    At greenheld, we employ a participatory and mixed-methods approach to research, ensuring that our findings are not only statistically sound but also contextually relevant and rich in qualitative depth. We begin by thoroughly understanding our client's objectives, then tailor our methodologies—ranging from large-scale surveys to in-depth interviews and focus groups—to best address the research questions. Our analytical process is rigorous, and we prioritize clear, accessible reporting that translates complex data into actionable recommendations. We are committed to capacity building and often work with local partners to ensure sustainability and local ownership of research outcomes.
+                    At Greenheld, we employ a participatory and mixed-methods approach to research, ensuring that our findings are not only statistically sound but also contextually relevant and rich in qualitative depth. We begin by thoroughly understanding our client's objectives, then tailor our methodologies—ranging from large-scale surveys to in-depth interviews and focus groups—to best address the research questions. Our analytical process is rigorous, and we prioritize clear, accessible reporting that translates complex data into actionable recommendations. We are committed to capacity building and often work with local partners to ensure sustainability and local ownership of research outcomes.
                 </p>
             </section>
 
@@ -177,16 +177,16 @@
 <footer class="bg-neutral-dark text-neutral-light py-12 px-4">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
         <div>
-            <h3 class="text-xl font-semibold mb-4 text-white">greenheld</h3>
+            <h3 class="text-xl font-semibold mb-4 text-white">Greenheld</h3>
             <p class="text-sm">
-                Placeholder Street Name, City, Postal Code<br>
-                Country
+                Area 10, Plot 234, Lilongwe<br>
+                Malawi
             </p>
             <p class="text-sm mt-2">
                 Email: <a href="mailto:info@greenheld.com" class="hover:text-primary transition duration-300">info@greenheld.com</a>
             </p>
             <p class="text-sm">
-                Phone: <a href="tel:+1234567890" class="hover:text-primary transition duration-300">+1 (234) 567-890</a>
+                Phone: <a href="tel:+1234567890" class="hover:text-primary transition duration-300">+(265) 999 123 456</a>
             </p>
         </div>
         <div>
@@ -198,22 +198,22 @@
                 <li><a href="projects.php" class="hover:text-primary transition duration-300">Projects</a></li>
                 <li><a href="testimonials.php" class="hover:text-primary transition duration-300">Testimonials</a></li>
                 <li><a href="contact.html" class="hover:text-primary transition duration-300">Contact</a></li>
-                <li><a href="#" class="hover:text-primary transition duration-300">Privacy Policy</a></li> <!-- Placeholder -->
-                <li><a href="#" class="hover:text-primary transition duration-300">Terms of Service</a></li> <!-- Placeholder -->
+                <!-- <li><a href="#" class="hover:text-primary transition duration-300">Privacy Policy</a></li> Placeholder -->
+                <!-- <li><a href="#" class="hover:text-primary transition duration-300">Terms of Service</a></li> Placeholder -->
             </ul>
         </div>
         <div>
             <h3 class="text-xl font-semibold mb-4 text-white">Connect With Us</h3>
             <!-- Placeholder for social media icons -->
             <div class="flex justify-center md:justify-start space-x-4 mt-2">
-                <a href="#" class="hover:text-primary transition duration-300">FB</a>
-                <a href="#" class="hover:text-primary transition duration-300">TW</a>
-                <a href="#" class="hover:text-primary transition duration-300">LI</a>
+                <a href="#" class="hover:text-primary transition duration-300">Facebook</a>
+                <a href="#" class="hover:text-primary transition duration-300">Twitter(X)</a>
+                <a href="#" class="hover:text-primary transition duration-300">LinkedIn</a>
             </div>
         </div>
     </div>
     <div class="text-center text-sm mt-10 border-t border-neutral-700 pt-8">
-        <p>&copy; <span id="currentYear"></span> greenheld Social Research and Consulting. All Rights Reserved.</p>
+        <p>&copy; <span id="currentYear"></span> Greenheld Social Research and Consulting. All Rights Reserved.</p>
     </div>
 </footer>
 

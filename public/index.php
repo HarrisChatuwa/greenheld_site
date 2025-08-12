@@ -3,7 +3,7 @@ require_once '../config/db.php'; // Go up one level to find config
 
 // Fetch latest 3 projects
 try {
-    $stmt_projects = $pdo->query("SELECT id, title, LEFT(description, 120) AS description_snippet, image_url FROM greenheld.projects ORDER BY created_at DESC LIMIT 3");
+    $stmt_projects = $pdo->query("SELECT id, title, LEFT(description, 120) AS description_snippet, image_url FROM projects ORDER BY created_at DESC LIMIT 3");
     $featured_projects = $stmt_projects->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     error_log("Error fetching featured projects: " . $e->getMessage());
@@ -12,7 +12,7 @@ try {
 
 // Fetch latest 2 testimonials
 try {
-    $stmt_testimonials = $pdo->query("SELECT quote, client_name, client_title_company FROM greenheld.testimonials ORDER BY created_at DESC LIMIT 2");
+    $stmt_testimonials = $pdo->query("SELECT quote, client_name, client_title_company FROM testimonials ORDER BY created_at DESC LIMIT 2");
     $featured_testimonials = $stmt_testimonials->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     error_log("Error fetching featured testimonials: " . $e->getMessage());
@@ -25,9 +25,9 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>greenheld Social Research and Consulting - Home</title>
+    <title>Greenheld Social Research and Consulting - Home</title>
     <link href="css/style.css" rel="stylesheet">
-    <meta name="description" content="greenheld Social Research and Consulting offers expert social research services.">
+    <meta name="description" content="Greenheld Social Research and Consulting offers expert social research services.">
     <link rel="icon" href="assets/images/logo_icon.png" type="image/png">
 </head>
 <body class="bg-neutral-light font-sans text-neutral-dark">
@@ -79,7 +79,7 @@ try {
             <div class="container mx-auto px-6 md:px-12 text-center">
                 <h2 class="text-3xl md:text-4xl font-semibold text-primary-dark mb-6">Welcome to Greenheld</h2>
                 <p class="text-neutral-default text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
-                    greenheld Social Research and Consulting is a leading firm dedicated to providing comprehensive research, monitoring, and evaluation services. We empower NGOs, government agencies, and private sector organizations with data-driven insights to achieve their social impact goals.
+                    Greenheld Social Research and Consulting is a leading firm dedicated to providing comprehensive research, monitoring, and evaluation services. We empower NGOs, government agencies, and private sector organizations with data-driven insights to achieve their social impact goals.
                 </p>
                 <a href="about.php" class="text-accent hover:underline font-semibold text-lg">Learn More About Us</a>
             </div>
@@ -172,7 +172,7 @@ try {
         <section id="secondary-cta" class="py-16 md:py-24 bg-primary text-white">
             <div class="container mx-auto px-6 md:px-12 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Drive Change?</h2>
-                <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto">Let's discuss how greenheld can assist you in achieving your research and consulting objectives. Contact us today for a consultation.</p>
+                <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto">Let's discuss how Greenheld can assist you in achieving your research and consulting objectives. Contact us today for a consultation.</p>
                 <a href="contact.html" class="bg-accent hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">Contact Us Today</a>
             </div>
         </section>
@@ -181,16 +181,16 @@ try {
 <footer class="bg-neutral-dark text-neutral-light py-12 px-4">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
         <div>
-            <h3 class="text-xl font-semibold mb-4 text-white">greenheld</h3>
+            <h3 class="text-xl font-semibold mb-4 text-white">Greenheld</h3>
             <p class="text-sm">
-                Placeholder Street Name, City, Postal Code<br>
-                Country
+                Area 10, Plot 234, Lilongwe<br>
+                Malawi
             </p>
             <p class="text-sm mt-2">
                 Email: <a href="mailto:info@greenheld.com" class="hover:text-primary transition duration-300">info@greenheld.com</a>
             </p>
             <p class="text-sm">
-                Phone: <a href="tel:+1234567890" class="hover:text-primary transition duration-300">+1 (234) 567-890</a>
+                Phone: <a href="tel:+1234567890" class="hover:text-primary transition duration-300">+(265) 999 123 456</a>
             </p>
         </div>
         <div>
@@ -202,22 +202,22 @@ try {
                 <li><a href="projects.php" class="hover:text-primary transition duration-300">Projects</a></li>
                 <li><a href="testimonials.php" class="hover:text-primary transition duration-300">Testimonials</a></li>
                 <li><a href="contact.html" class="hover:text-primary transition duration-300">Contact</a></li>
-                <li><a href="#" class="hover:text-primary transition duration-300">Privacy Policy</a></li> <!-- Placeholder -->
-                <li><a href="#" class="hover:text-primary transition duration-300">Terms of Service</a></li> <!-- Placeholder -->
+                <!-- <li><a href="#" class="hover:text-primary transition duration-300">Privacy Policy</a></li> Placeholder -->
+                <!-- <li><a href="#" class="hover:text-primary transition duration-300">Terms of Service</a></li> Placeholder -->
             </ul>
         </div>
         <div>
             <h3 class="text-xl font-semibold mb-4 text-white">Connect With Us</h3>
             <!-- Placeholder for social media icons -->
             <div class="flex justify-center md:justify-start space-x-4 mt-2">
-                <a href="#" class="hover:text-primary transition duration-300">FB</a>
-                <a href="#" class="hover:text-primary transition duration-300">TW</a>
-                <a href="#" class="hover:text-primary transition duration-300">LI</a>
+                <a href="#" class="hover:text-primary transition duration-300">Facebook</a>
+                <a href="#" class="hover:text-primary transition duration-300">Twitter(X)</a>
+                <a href="#" class="hover:text-primary transition duration-300">LinkedIn</a>
             </div>
         </div>
     </div>
     <div class="text-center text-sm mt-10 border-t border-neutral-700 pt-8">
-        <p>&copy; <span id="currentYear"></span> greenheld Social Research and Consulting. All Rights Reserved.</p>
+        <p>&copy; <span id="currentYear"></span> Greenheld Social Research and Consulting. All Rights Reserved.</p>
     </div>
 </footer>
 

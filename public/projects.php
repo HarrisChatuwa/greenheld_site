@@ -16,9 +16,9 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Projects - greenheld Social Research and Consulting</title>
+    <title>Our Projects - Greenheld Social Research and Consulting</title>
     <link href="css/style.css" rel="stylesheet">
-    <meta name="description" content="View past and ongoing projects by greenheld Social Research and Consulting.">
+    <meta name="description" content="View past and ongoing projects by Greenheld Social Research and Consulting.">
     <link rel="icon" href="assets/images/logo_icon.png" type="image/png">
 </head>
 <body class="bg-neutral-light font-sans text-neutral-dark">
@@ -100,16 +100,16 @@ try {
 <footer class="bg-neutral-dark text-neutral-light py-12 px-4">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
         <div>
-            <h3 class="text-xl font-semibold mb-4 text-white">greenheld</h3>
+            <h3 class="text-xl font-semibold mb-4 text-white">Greenheld</h3>
             <p class="text-sm">
-                Placeholder Street Name, City, Postal Code<br>
-                Country
+                Area 10, Plot 234, Lilongwe<br>
+                Malawi
             </p>
             <p class="text-sm mt-2">
                 Email: <a href="mailto:info@greenheld.com" class="hover:text-primary transition duration-300">info@greenheld.com</a>
             </p>
             <p class="text-sm">
-                Phone: <a href="tel:+1234567890" class="hover:text-primary transition duration-300">+1 (234) 567-890</a>
+                Phone: <a href="tel:+1234567890" class="hover:text-primary transition duration-300">+(265) 999 123 456</a>
             </p>
         </div>
         <div>
@@ -121,22 +121,22 @@ try {
                 <li><a href="projects.php" class="hover:text-primary transition duration-300">Projects</a></li>
                 <li><a href="testimonials.php" class="hover:text-primary transition duration-300">Testimonials</a></li>
                 <li><a href="contact.html" class="hover:text-primary transition duration-300">Contact</a></li>
-                <li><a href="#" class="hover:text-primary transition duration-300">Privacy Policy</a></li> <!-- Placeholder -->
-                <li><a href="#" class="hover:text-primary transition duration-300">Terms of Service</a></li> <!-- Placeholder -->
+                <!-- <li><a href="#" class="hover:text-primary transition duration-300">Privacy Policy</a></li> Placeholder -->
+                <!-- <li><a href="#" class="hover:text-primary transition duration-300">Terms of Service</a></li> Placeholder -->
             </ul>
         </div>
         <div>
             <h3 class="text-xl font-semibold mb-4 text-white">Connect With Us</h3>
             <!-- Placeholder for social media icons -->
             <div class="flex justify-center md:justify-start space-x-4 mt-2">
-                <a href="#" class="hover:text-primary transition duration-300">FB</a>
-                <a href="#" class="hover:text-primary transition duration-300">TW</a>
-                <a href="#" class="hover:text-primary transition duration-300">LI</a>
+                <a href="#" class="hover:text-primary transition duration-300">Facebook</a>
+                <a href="#" class="hover:text-primary transition duration-300">Twitter(X)</a>
+                <a href="#" class="hover:text-primary transition duration-300">LinkedIn</a>
             </div>
         </div>
     </div>
     <div class="text-center text-sm mt-10 border-t border-neutral-700 pt-8">
-        <p>&copy; <span id="currentYear"></span> greenheld Social Research and Consulting. All Rights Reserved.</p>
+        <p>&copy; <span id="currentYear"></span> Greenheld Social Research and Consulting. All Rights Reserved.</p>
     </div>
 </footer>
 
