@@ -1,46 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Modal handling
-    const openModalButtons = document.querySelectorAll('[data-modal-target]');
-    const closeModalButtons = document.querySelectorAll('[data-modal-close]');
-    const overlay = document.getElementById('overlay');
+document.addEventListener('DOMContentLoaded', function () {
+    const sidebar = document.getElementById('sidebar');
+    const openSidebarButton = document.getElementById('open-sidebar');
+    const closeSidebarButton = document.getElementById('close-sidebar');
 
-    openModalButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const modal = document.querySelector(button.dataset.modalTarget);
-            openModal(modal);
-        });
-    });
-
-    closeModalButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const modal = button.closest('.modal');
-            closeModal(modal);
-        });
-    });
-
-    if (overlay) {
-        overlay.addEventListener('click', () => {
-            const modals = document.querySelectorAll('.modal:not(.hidden)');
-            modals.forEach(modal => {
-                closeModal(modal);
-            });
+    if (openSidebarButton) {
+        openSidebarButton.addEventListener('click', function () {
+            sidebar.classList.remove('-translate-x-full');
         });
     }
 
-
-    function openModal(modal) {
-        if (modal == null) return;
-        modal.classList.remove('hidden');
-        if (overlay) {
-            overlay.classList.remove('hidden');
-        }
-    }
-
-    function closeModal(modal) {
-        if (modal == null) return;
-        modal.classList.add('hidden');
-        if (overlay) {
-            overlay.classList.add('hidden');
-        }
+    if (closeSidebarButton) {
+        closeSidebarButton.addEventListener('click', function () {
+            sidebar.classList.add('-translate-x-full');
+        });
     }
 });

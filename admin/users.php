@@ -20,7 +20,7 @@ $users = $stmt->fetchAll();
     </button>
 </div>
 
-<div class="bg-white shadow-md rounded my-6">
+<div class="bg-white shadow-md rounded my-6 overflow-x-auto">
     <table class="min-w-full leading-normal">
         <thead>
             <tr>
