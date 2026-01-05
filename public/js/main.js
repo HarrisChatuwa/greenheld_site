@@ -7,6 +7,14 @@ document.addEventListener('DOMContentLoaded', function () {
         mobileMenuButton.addEventListener('click', function () {
             mobileMenu.classList.toggle('hidden');
         });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInside = mobileMenuButton.contains(event.target) || mobileMenu.contains(event.target);
+            if (!isClickInside && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
     }
 
     // Active navigation link
@@ -40,4 +48,43 @@ document.addEventListener('DOMContentLoaded', function () {
     if (activeMobileLink) {
         activeMobileLink.classList.add('bg-primary-light', 'text-primary-dark');
     }
+
+    // Set current year in footer
+    const currentYearElement = document.getElementById('currentYear');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    }
+
+    // Intersection Observer for fade-in animations on scroll
+    const observerOptions = {
+        root: null,
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const fadeInObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-up');
+                fadeInObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe sections and cards for fade-in effect
+    const elementsToAnimate = document.querySelectorAll('section, .bg-white.p-8, .bg-white.p-6');
+    elementsToAnimate.forEach(el => {
+        if (!el.closest('header') && !el.closest('footer')) {
+            fadeInObserver.observe(el);
+        }
+    });
+
+    // Add lazy loading to images below the fold
+    const images = document.querySelectorAll('img:not([loading])');
+    images.forEach((img, index) => {
+        // Skip images in the hero and first section
+        if (index > 2) {
+            img.setAttribute('loading', 'lazy');
+        }
+    });
 });

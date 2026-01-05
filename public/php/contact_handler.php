@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // --- Email Notification ---
                 // **IMPORTANT**: Replace with your actual email address and credentials.
                 // Using a library like PHPMailer is strongly recommended for reliability.
-                $to = 'your-email@example.com'; // <-- REPLACE THIS
+                $to = 'hchatuwa@gmail.com'; // <-- REPLACE THIS
                 $email_subject = "New Contact Form Submission: " . $subject;
                 $email_body = "You have received a new message from your website contact form.\n\n";
                 $email_body .= "Here are the details:\n";

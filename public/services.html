@@ -1,182 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services - Greenheld Social Research and Consulting</title>
     <link href="css/style.css" rel="stylesheet">
-    <meta name="description" content="Explore the range of social research and consulting services offered by Greenheld.">
+    <link href="css/enhancements.css" rel="stylesheet">
+    <meta name="description"
+        content="Explore the range of social research and consulting services offered by Greenheld.">
     <link rel="icon" href="assets/images/logo_icon.png" type="image/png">
 </head>
+
 <body class="bg-neutral-light font-sans text-neutral-dark">
-<header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="index.php">
-            <img src="assets/images/logo.png" alt="greenheld Logo" style="height: 3.5rem;">
-        </a>
-        <nav class="hidden md:flex space-x-1 items-center">
-            <a href="index.php" id="nav-home" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Home</a>
-            <a href="about.php" id="nav-about" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">About</a>
-            <a href="services.html" id="nav-services" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Services</a>
-            <a href="projects.php" id="nav-projects" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Projects</a>
-            <a href="testimonials.php" id="nav-testimonials" class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Testimonials</a>
-            <a href="contact.html" id="nav-contact" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md transition-all duration-300">Contact Us</a>
-        </nav>
-        <div class="md:hidden">
-            <button id="mobile-menu-button" class="text-neutral-dark focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.php">
+                <img src="assets/images/logo.png" alt="greenheld Logo" style="height: 3.5rem;">
+            </a>
+            <nav class="hidden md:flex space-x-1 items-center">
+                <a href="index.php" id="nav-home"
+                    class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Home</a>
+                <a href="about.php" id="nav-about"
+                    class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">About</a>
+                <a href="services.html" id="nav-services"
+                    class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Services</a>
+                <a href="projects.php" id="nav-projects"
+                    class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Projects</a>
+                <a href="testimonials.php" id="nav-testimonials"
+                    class="py-2 px-3 text-neutral-default hover:text-primary hover:bg-neutral-light rounded-md transition-all duration-300">Testimonials</a>
+                <a href="contact.html" id="nav-contact"
+                    class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md transition-all duration-300">Contact
+                    Us</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-neutral-dark focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg py-2">
-        <a href="index.php" id="nav-home-mobile" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Home</a>
-        <a href="about.php" id="nav-about-mobile" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">About</a>
-        <a href="services.html" id="nav-services-mobile" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Services</a>
-        <a href="projects.php" id="nav-projects-mobile" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Projects</a>
-        <a href="testimonials.php" id="nav-testimonials-mobile" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Testimonials</a>
-        <a href="contact.html" id="nav-contact-mobile" class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Contact Us</a>
-    </div>
-</header>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg py-2">
+            <a href="index.php" id="nav-home-mobile"
+                class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Home</a>
+            <a href="about.php" id="nav-about-mobile"
+                class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">About</a>
+            <a href="services.html" id="nav-services-mobile"
+                class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Services</a>
+            <a href="projects.php" id="nav-projects-mobile"
+                class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Projects</a>
+            <a href="testimonials.php" id="nav-testimonials-mobile"
+                class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Testimonials</a>
+            <a href="contact.html" id="nav-contact-mobile"
+                class="block px-4 py-2 text-neutral-default hover:bg-primary-light hover:text-primary-dark transition duration-300">Contact
+                Us</a>
+        </div>
+    </header>
 
     <main class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-6 md:px-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-10 text-center">Our Comprehensive Research & Consulting Services</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-10 text-center">Our Comprehensive Research &
+                Consulting Services</h1>
             <p class="text-lg text-neutral-default max-w-3xl mx-auto text-center mb-16">
-                Greenheld offers a wide array of social research and consulting services designed to meet the unique needs of NGOs, government agencies, and private sector organizations. We are committed to delivering actionable insights and strategic guidance to foster social impact.
+                Greenheld offers a wide array of social research and consulting services designed to meet the unique
+                needs of NGOs, government agencies, and private sector organizations. We are committed to delivering
+                actionable insights and strategic guidance to foster social impact.
             </p>
 
             <div id="services-list" class="space-y-12 md:space-y-20">
-                <!-- Service Item 1: Baseline & Endline Surveys -->
-                <section id="baseline-surveys" class="bg-neutral-light p-8 md:p-12 rounded-xl shadow-xl scroll-mt-24">
+                <!-- Service Item 1: Social and Health Research -->
+                <section id="social-health-research"
+                    class="bg-neutral-light p-8 md:p-12 rounded-xl shadow-xl scroll-mt-24">
                     <h2 class="text-3xl font-semibold text-primary-dark mb-6 flex items-center">
-                        <svg class="w-8 h-8 mr-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                        Baseline & Endline Surveys
+                        <svg class="w-8 h-8 mr-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                        Social and Health Research
                     </h2>
                     <p class="text-neutral-default leading-relaxed mb-6 text-lg">
-                        We conduct comprehensive baseline surveys to establish initial conditions and benchmarks before a project or intervention begins. Subsequently, endline surveys are performed to measure the changes and impact attributable to the project. This provides crucial data for accountability and learning.
+                        We specialize in conducting baseline, mid-term and end-line surveys to support evidence based
+                        decision making. This provides accountability and learning through comprehensive research
+                        methodologies.
                     </p>
                     <h4 class="text-xl font-semibold text-primary mb-3">Key Offerings:</h4>
                     <ul class="list-disc list-inside text-neutral-default space-y-2 mb-6 pl-4">
-                        <li>Quantitative survey design and tool development (household questionnaires, KII guides).</li>
-                        <li>Sampling methodology design (random, stratified, clustered).</li>
-                        <li>Training and deployment of enumerators for data collection (CAPI/PAPI).</li>
-                        <li>Rigorous data cleaning, analysis, and reporting.</li>
-                        <li>Impact assessment and attribution analysis.</li>
+                        <li>Quantitative and qualitative survey designs, study protocols and tools development</li>
+                        <li>Sampling techniques (random, stratified, cluster)</li>
+                        <li>Training and deploying research assistants for data collection</li>
+                        <li>Data transcription and translation</li>
+                        <li>Rigorous data cleaning, analysis and reporting</li>
                     </ul>
-                    <a href="contact.html?service=Baseline%20and%20Endline%20Surveys" class="inline-block bg-accent hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-md transition duration-300 text-lg">Request Survey Services</a>
+                    <a href="contact.html?service=Social%20and%20Health%20Research"
+                        class="inline-block bg-accent hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-md transition duration-300 text-lg">Request
+                        Research Services</a>
                 </section>
 
-                <!-- Service Item 2: Feasibility Studies -->
-                <section id="feasibility-studies" class="bg-white p-8 md:p-12 rounded-xl shadow-xl scroll-mt-24 border border-neutral-200">
+                <!-- Service Item 2: Capacity Building and Training -->
+                <section id="capacity-building-training"
+                    class="bg-white p-8 md:p-12 rounded-xl shadow-xl scroll-mt-24 border border-neutral-200">
                     <h2 class="text-3xl font-semibold text-primary-dark mb-6 flex items-center">
-                        <svg class="w-8 h-8 mr-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
-                        Feasibility Studies
+                        <svg class="w-8 h-8 mr-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                            </path>
+                        </svg>
+                        Capacity Building and Training
                     </h2>
                     <p class="text-neutral-default leading-relaxed mb-6 text-lg">
-                        Before investing significant resources into a new project or initiative, it's crucial to assess its viability. Our feasibility studies provide a thorough analysis of the potential success of an intervention, considering technical, economic, social, and operational aspects.
+                        We are committed to strengthening the capabilities of organizations and individuals through
+                        customized training programs and workshops designed to be practical, participatory, and relevant
+                        to specific client needs.
                     </p>
                     <h4 class="text-xl font-semibold text-primary mb-3">Key Offerings:</h4>
                     <ul class="list-disc list-inside text-neutral-default space-y-2 mb-6 pl-4">
-                        <li>Market analysis and needs assessment.</li>
-                        <li>Stakeholder analysis and engagement strategies.</li>
-                        <li>Risk assessment and mitigation planning.</li>
-                        <li>Resource requirement analysis (financial, human, technical).</li>
-                        <li>Development of viable operational models and recommendations.</li>
+                        <li>Customized training workshops on research methodology (qualitative and quantitative)</li>
+                        <li>Training on M & E principles and framework designs</li>
+                        <li>Training on data collection techniques and tools (ODK, Kobo toolbox, Survey CTO)</li>
+                        <li>Training on data analysis software (R, SPSS, STATA, Python, Excel, NVivo)</li>
+                        <li>Training on qualitative data transcription and translation</li>
+                        <li>Coaching and mentorship for research and M & E teams</li>
                     </ul>
-                    <a href="contact.html?service=Feasibility%20Studies" class="inline-block bg-accent hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-md transition duration-300 text-lg">Discuss Your Project Idea</a>
+                    <a href="contact.html?service=Capacity%20Building%20and%20Training"
+                        class="inline-block bg-accent hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-md transition duration-300 text-lg">Enhance
+                        Your Team's Skills</a>
                 </section>
 
-                <!-- Service Item 3: Monitoring & Evaluation (M&E) -->
-                <section id="monitoring-evaluation" class="bg-neutral-light p-8 md:p-12 rounded-xl shadow-xl scroll-mt-24">
+                <!-- Service Item 3: Humanitarian Work -->
+                <section id="humanitarian-work" class="bg-neutral-light p-8 md:p-12 rounded-xl shadow-xl scroll-mt-24">
                     <h2 class="text-3xl font-semibold text-primary-dark mb-6 flex items-center">
-                        <svg class="w-8 h-8 mr-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                        Monitoring & Evaluation (M&E)
+                        <svg class="w-8 h-8 mr-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                            </path>
+                        </svg>
+                        Humanitarian Work
                     </h2>
                     <p class="text-neutral-default leading-relaxed mb-6 text-lg">
-                        Effective M&E frameworks are essential for tracking progress, ensuring accountability, and facilitating adaptive management. We design and implement robust M&E systems, conduct mid-term and final evaluations, and help organizations learn from their experiences to improve future programming.
+                        Supporting disaster response and recovery efforts for vulnerable populations through
+                        comprehensive needs assessments and rapid response surveys.
                     </p>
                     <h4 class="text-xl font-semibold text-primary mb-3">Key Offerings:</h4>
                     <ul class="list-disc list-inside text-neutral-default space-y-2 mb-6 pl-4">
-                        <li>Development of M&E frameworks, including theories of change and logframes.</li>
-                        <li>Indicator development and data collection tool design.</li>
-                        <li>Routine data quality assessments (DQA).</li>
-                        <li>Performance monitoring and reporting systems.</li>
-                        <li>Mid-term reviews and final project evaluations.</li>
-                        <li>Impact evaluations using rigorous methodologies.</li>
+                        <li>Conducting needs assessment for humanitarian interventions</li>
+                        <li>Support disaster response and recovery for vulnerable populations</li>
+                        <li>Conducting rapid and comprehensive post-disaster surveys</li>
                     </ul>
-                    <a href="contact.html?service=Monitoring%20and%20Evaluation" class="inline-block bg-accent hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-md transition duration-300 text-lg">Strengthen Your M&E</a>
+                    <a href="contact.html?service=Humanitarian%20Work"
+                        class="inline-block bg-accent hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-md transition duration-300 text-lg">Learn
+                        More About Our Humanitarian Services</a>
                 </section>
 
-                <!-- Service Item 4: Capacity Building -->
-                <section id="capacity-building" class="bg-white p-8 md:p-12 rounded-xl shadow-xl scroll-mt-24 border border-neutral-200">
+                <!-- Service Item 4: Project Management and M & E Services -->
+                <section id="project-management-me"
+                    class="bg-white p-8 md:p-12 rounded-xl shadow-xl scroll-mt-24 border border-neutral-200">
                     <h2 class="text-3xl font-semibold text-primary-dark mb-6 flex items-center">
-                        <svg class="w-8 h-8 mr-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        Capacity Building & Training
+                        <svg class="w-8 h-8 mr-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                            </path>
+                        </svg>
+                        Project Management and M & E Services
                     </h2>
                     <p class="text-neutral-default leading-relaxed mb-6 text-lg">
-                        We are committed to strengthening the capabilities of organizations and individuals in social research and M&E. Our tailored training programs and workshops are designed to be practical, participatory, and relevant to the specific needs of our clients.
+                        Effective monitoring and evaluation frameworks are essential for tracking progress, ensuring
+                        accountability, and facilitating adaptive management. We design and implement robust M & E
+                        systems to help organizations learn from their experiences.
                     </p>
                     <h4 class="text-xl font-semibold text-primary mb-3">Key Offerings:</h4>
                     <ul class="list-disc list-inside text-neutral-default space-y-2 mb-6 pl-4">
-                        <li>Customized training workshops on research methodologies (qualitative & quantitative).</li>
-                        <li>Training on M&E principles, framework design, and data analysis.</li>
-                        <li>Data collection techniques and tools (e.g., KoboToolbox, SurveyCTO).</li>
-                        <li>Data analysis software training (e.g., SPSS, R, Excel for data analysis).</li>
-                        <li>Mentorship and coaching for research and M&E teams.</li>
+                        <li>Design and implement robust project management M & E systems</li>
+                        <li>Developing M & E frameworks (theories of change and log-frames)</li>
+                        <li>Developing matrix indicators (SMART and CREAM)</li>
+                        <li>Providing routine data quality assessments</li>
                     </ul>
-                    <a href="contact.html?service=Capacity%20Building" class="inline-block bg-accent hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-md transition duration-300 text-lg">Enhance Your Team's Skills</a>
+                    <a href="contact.html?service=Project%20Management%20and%20M%26E"
+                        class="inline-block bg-accent hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-md transition duration-300 text-lg">Strengthen
+                        Your M&E</a>
+                </section>
+
+                <!-- Service Item 5: Data Science and Policy Analysis -->
+                <section id="data-science-policy"
+                    class="bg-neutral-light p-8 md:p-12 rounded-xl shadow-xl scroll-mt-24">
+                    <h2 class="text-3xl font-semibold text-primary-dark mb-6 flex items-center">
+                        <svg class="w-8 h-8 mr-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                            </path>
+                        </svg>
+                        Data Science and Policy Analysis
+                    </h2>
+                    <p class="text-neutral-default leading-relaxed mb-6 text-lg">
+                        Transforming complex data into actionable insights and strategic policy recommendations to
+                        inform evidence-based decision making and drive positive change.
+                    </p>
+                    <h4 class="text-xl font-semibold text-primary mb-3">Key Offerings:</h4>
+                    <ul class="list-disc list-inside text-neutral-default space-y-2 mb-6 pl-4">
+                        <li>Comprehensive data analysis and report writing</li>
+                        <li>Developing policy briefs</li>
+                    </ul>
+                    <a href="contact.html?service=Data%20Science%20and%20Policy%20Analysis"
+                        class="inline-block bg-accent hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-md transition duration-300 text-lg">Request
+                        Data Analysis Services</a>
                 </section>
             </div>
         </div>
     </main>
 
-<footer class="bg-neutral-dark text-neutral-light py-12 px-4">
-    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-        <div>
-            <h3 class="text-xl font-semibold mb-4 text-white">Greenheld</h3>
-            <p class="text-sm">
-                Area 10, Plot 234, Lilongwe<br>
-                Malawi
-            </p>
-            <p class="text-sm mt-2">
-                Email: <a href="mailto:info@greenheld.com" class="hover:text-primary transition duration-300">info@greenheld.com</a>
-            </p>
-            <p class="text-sm">
-                Phone: <a href="tel:+1234567890" class="hover:text-primary transition duration-300">+(265) 999 123 456</a>
-            </p>
-        </div>
-        <div>
-            <h3 class="text-xl font-semibold mb-4 text-white">Quick Links</h3>
-            <ul class="space-y-2 text-sm">
-                <li><a href="index.php" class="hover:text-primary transition duration-300">Home</a></li>
-                <li><a href="about.php" class="hover:text-primary transition duration-300">About Us</a></li>
-                <li><a href="services.html" class="hover:text-primary transition duration-300">Services</a></li>
-                <li><a href="projects.php" class="hover:text-primary transition duration-300">Projects</a></li>
-                <li><a href="testimonials.php" class="hover:text-primary transition duration-300">Testimonials</a></li>
-                <li><a href="contact.html" class="hover:text-primary transition duration-300">Contact</a></li>
-                <!-- <li><a href="#" class="hover:text-primary transition duration-300">Privacy Policy</a></li> Placeholder -->
-                <!-- <li><a href="#" class="hover:text-primary transition duration-300">Terms of Service</a></li> Placeholder -->
-            </ul>
-        </div>
-        <div>
-            <h3 class="text-xl font-semibold mb-4 text-white">Connect With Us</h3>
-            <!-- Placeholder for social media icons -->
-            <div class="flex justify-center md:justify-start space-x-4 mt-2">
-                <a href="#" class="hover:text-primary transition duration-300">Facebook</a>
-                <a href="#" class="hover:text-primary transition duration-300">Twitter(X)</a>
-                <a href="#" class="hover:text-primary transition duration-300">LinkedIn</a>
+    <footer class="bg-neutral-dark text-neutral-light py-12 px-4">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-white">Greenheld</h3>
+                <p class="text-sm">
+                    Area 10, Plot 234, Lilongwe<br>
+                    Malawi
+                </p>
+                <p class="text-sm mt-2">
+                    Email: <a href="mailto:info@greenheld.com"
+                        class="hover:text-primary transition duration-300">info@greenheld.com</a>
+                </p>
+                <p class="text-sm">
+                    Phone: <a href="tel:+1234567890" class="hover:text-primary transition duration-300">+(265) 999 123
+                        456</a>
+                </p>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-white">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.php" class="hover:text-primary transition duration-300">Home</a></li>
+                    <li><a href="about.php" class="hover:text-primary transition duration-300">About Us</a></li>
+                    <li><a href="services.html" class="hover:text-primary transition duration-300">Services</a></li>
+                    <li><a href="projects.php" class="hover:text-primary transition duration-300">Projects</a></li>
+                    <li><a href="testimonials.php" class="hover:text-primary transition duration-300">Testimonials</a>
+                    </li>
+                    <li><a href="contact.html" class="hover:text-primary transition duration-300">Contact</a></li>
+                    <!-- <li><a href="#" class="hover:text-primary transition duration-300">Privacy Policy</a></li> Placeholder -->
+                    <!-- <li><a href="#" class="hover:text-primary transition duration-300">Terms of Service</a></li> Placeholder -->
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-white">Connect With Us</h3>
+                <!-- Placeholder for social media icons -->
+                <div class="flex justify-center md:justify-start space-x-4 mt-2">
+                    <a href="#" class="hover:text-primary transition duration-300">Facebook</a>
+                    <a href="#" class="hover:text-primary transition duration-300">Twitter(X)</a>
+                    <a href="#" class="hover:text-primary transition duration-300">LinkedIn</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="text-center text-sm mt-10 border-t border-neutral-700 pt-8">
-        <p>&copy; <span id="currentYear"></span> Greenheld Social Research and Consulting. All Rights Reserved.</p>
-    </div>
-</footer>
+        <div class="text-center text-sm mt-10 border-t border-neutral-700 pt-8">
+            <p>&copy; <span id="currentYear"></span> Greenheld Social Research and Consulting. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>

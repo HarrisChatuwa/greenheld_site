@@ -27,6 +27,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greenheld Social Research and Consulting - Home</title>
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/enhancements.css" rel="stylesheet">
     <meta name="description" content="Greenheld Social Research and Consulting offers expert social research services.">
     <link rel="icon" href="assets/images/logo_icon.png" type="image/png">
 </head>
@@ -64,13 +65,52 @@ try {
 </header>
 
     <main>
-        <!-- Hero Section -->
-        <section id="hero" class="bg-primary text-white text-center py-20 md:py-32 px-4 relative overflow-hidden">
-            <div class="absolute inset-0 bg-black opacity-30"></div> <!-- Optional: Dark overlay for better text contrast if using a background image -->
-            <div class="relative z-10 container mx-auto">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">Empowering Decisions Through Insightful Social Research.</h1>
-                <p class="text-lg sm:text-xl md:text-2xl mb-10 max-w-3xl mx-auto">Transforming data into actionable strategies for sustainable development and social impact.</p>
+    <main>
+    <main>
+    <main>
+    <main>
+        <!-- Internal CSS for Responsive Hero Control (Bypassing Build System) -->
+        <style>
+            #hero {
+                min-height: 65vh; /* Better for mobile to avoid pixelation */
+                padding-top: 6rem;
+                padding-bottom: 6rem;
+            }
+            @media (min-width: 768px) {
+                #hero {
+                    min-height: 85vh; /* Massive impact on desktop */
+                    padding-top: 8rem;
+                    padding-bottom: 8rem;
+                }
+            }
+        </style>
+
+        <!-- Hero Section with Background Image - Inline Styles for basic fallback -->
+        <section id="hero" class="relative text-white text-center px-4 overflow-hidden" 
+                 style="background-image: url('assets/images/greenheld_team.jpg'); 
+                        background-size: cover; 
+                        background-position: center; 
+                        background-repeat: no-repeat; 
+                        display: flex; 
+                        flex-direction: column; 
+                        justify-content: center;">
+            
+            <!-- Strong Gradient Overlay -->
+            <div class="absolute inset-0" 
+                 style="background: linear-gradient(135deg, rgba(14, 116, 144, 0.95), rgba(49, 80, 57, 0.9)); z-index: 1;"></div>
+            
+            <div class="relative max-w-5xl mx-auto flex flex-col items-center" style="z-index: 10;">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">Empowering Decisions Through <br>Insightful Social Research.</h1>
+                <p class="text-xl sm:text-2xl md:text-3xl mb-10 max-w-3xl mx-auto opacity-95 drop-shadow-md font-light">Transforming data into actionable strategies for sustainable development and social impact.</p>
+                
+                <!-- CTA Button - Inline Styles for Layout Fix -->
+                <!-- <a href="#services-overview" class="bg-accent hover:bg-pink-600 text-white font-bold py-4 px-10 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-xl"
+                   style="display: inline-flex; align-items: center; justify-content: center; margin: 0 auto; margin-top: 2rem; background-color: #ec4899; color: white; border-radius: 9999px;">
+                    <span>Discover Our Expertise</span>
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="margin-left: 0.75rem;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a> -->
                 <a href="#services-overview" class="bg-accent hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">Discover Our Expertise</a>
+
             </div>
         </section>
 
@@ -81,38 +121,66 @@ try {
                 <p class="text-neutral-default text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
                     Greenheld Social Research and Consulting is a leading firm dedicated to providing comprehensive research, monitoring, and evaluation services. We empower NGOs, government agencies, and private sector organizations with data-driven insights to achieve their social impact goals.
                 </p>
-                <a href="about.php" class="text-accent hover:underline font-semibold text-lg">Learn More About Us</a>
+                <a href="about.php" class="inline-block bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-md transition duration-300">Learn More About Us</a>
             </div>
         </section>
 
         <!-- Key Services Overview -->
-        <section id="services-overview" class="py-16 md:py-24 bg-neutral-light">
+        <section id="services-overview" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-6 md:px-12">
-                <h2 class="text-3xl md:text-4xl font-semibold text-primary-dark mb-12 text-center">Our Core Expertise</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary-dark mb-4">Our Core Expertise</h2>
+                    <p class="text-neutral-default text-lg max-w-2xl mx-auto">Comprehensive solutions tailored to your research and consulting needs</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Service 1 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
-                        <h3 class="text-2xl font-semibold text-primary mb-4">Baseline & Endline Surveys</h3>
-                        <p class="text-neutral-default mb-6 flex-grow">Robust data collection and analysis to establish project benchmarks and measure impact.</p>
-                        <a href="services.html#baseline-surveys" class="text-accent hover:underline font-medium self-start">Learn More &raquo;</a>
+                    <div class="group bg-white border border-neutral-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center">
+                        <div class="bg-primary/5 p-4 rounded-full mb-6 group-hover:bg-primary/10 transition-colors">
+                            <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary-dark mb-4 group-hover:text-primary transition-colors">Social and Health Research</h3>
+                        <p class="text-neutral-default mb-6 leading-relaxed">Conducting baseline, mid-term and end-line surveys to support evidence based decision making with comprehensive methodologies.</p>
+                        <a href="services.html#social-health-research" class="mt-auto text-primary font-semibold hover:text-accent transition-colors flex items-center gap-2 group-hover:gap-3">Learn More <span class="text-xl">→</span></a>
                     </div>
+
                     <!-- Service 2 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
-                        <h3 class="text-2xl font-semibold text-primary mb-4">Feasibility Studies</h3>
-                        <p class="text-neutral-default mb-6 flex-grow">Assessing the viability of new initiatives and interventions for sustainable success.</p>
-                        <a href="services.html#feasibility-studies" class="text-accent hover:underline font-medium self-start">Learn More &raquo;</a>
+                    <div class="group bg-white border border-neutral-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center">
+                        <div class="bg-primary/5 p-4 rounded-full mb-6 group-hover:bg-primary/10 transition-colors">
+                            <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary-dark mb-4 group-hover:text-primary transition-colors">Capacity Building and Training</h3>
+                        <p class="text-neutral-default mb-6 leading-relaxed">Customized training workshops on research methodology, M & E, data collection tools, and analysis software.</p>
+                        <a href="services.html#capacity-building-training" class="mt-auto text-primary font-semibold hover:text-accent transition-colors flex items-center gap-2 group-hover:gap-3">Learn More <span class="text-xl">→</span></a>
                     </div>
+
                     <!-- Service 3 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
-                        <h3 class="text-2xl font-semibold text-primary mb-4">Monitoring & Evaluation</h3>
-                        <p class="text-neutral-default mb-6 flex-grow">Continuous tracking and assessment to ensure project effectiveness and accountability.</p>
-                        <a href="services.html#monitoring-evaluation" class="text-accent hover:underline font-medium self-start">Learn More &raquo;</a>
+                    <div class="group bg-white border border-neutral-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center">
+                        <div class="bg-primary/5 p-4 rounded-full mb-6 group-hover:bg-primary/10 transition-colors">
+                            <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary-dark mb-4 group-hover:text-primary transition-colors">Humanitarian Work</h3>
+                        <p class="text-neutral-default mb-6 leading-relaxed">Supporting disaster response and recovery for vulnerable populations through needs assessments and post-disaster surveys.</p>
+                        <a href="services.html#humanitarian-work" class="mt-auto text-primary font-semibold hover:text-accent transition-colors flex items-center gap-2 group-hover:gap-3">Learn More <span class="text-xl">→</span></a>
                     </div>
+
                     <!-- Service 4 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
-                        <h3 class="text-2xl font-semibold text-primary mb-4">Capacity Building</h3>
-                        <p class="text-neutral-default mb-6 flex-grow">Strengthening organizational and individual capabilities in research methodologies.</p>
-                        <a href="services.html#capacity-building" class="text-accent hover:underline font-medium self-start">Learn More &raquo;</a>
+                    <div class="group bg-white border border-neutral-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center">
+                        <div class="bg-primary/5 p-4 rounded-full mb-6 group-hover:bg-primary/10 transition-colors">
+                            <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary-dark mb-4 group-hover:text-primary transition-colors">Project Management and M & E</h3>
+                        <p class="text-neutral-default mb-6 leading-relaxed">Designing and implementing robust M & E systems, frameworks, and indicators with routine data quality assessments.</p>
+                        <a href="services.html#project-management-me" class="mt-auto text-primary font-semibold hover:text-accent transition-colors flex items-center gap-2 group-hover:gap-3">Learn More <span class="text-xl">→</span></a>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="group bg-white border border-neutral-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center">
+                        <div class="bg-primary/5 p-4 rounded-full mb-6 group-hover:bg-primary/10 transition-colors">
+                            <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary-dark mb-4 group-hover:text-primary transition-colors">Data Science and Policy Analysis</h3>
+                        <p class="text-neutral-default mb-6 leading-relaxed">Comprehensive data analysis, report writing, and developing policy briefs to inform evidence-based decision making.</p>
+                        <a href="services.html#data-science-policy" class="mt-auto text-primary font-semibold hover:text-accent transition-colors flex items-center gap-2 group-hover:gap-3">Learn More <span class="text-xl">→</span></a>
                     </div>
                 </div>
             </div>
